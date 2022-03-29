@@ -8,6 +8,7 @@ import { theme } from '../material-ui/theme';
 import createEmotionCache from '../material-ui/createEmotionCache';
 import { Provider } from 'react-redux';
 import { store } from '../redux/store';
+import Layout from '../components/layout';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -25,7 +26,9 @@ function MyApp(props) {
                     <ThemeProvider theme={theme}>
                         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                         <CssBaseline />
-                        <Component {...pageProps} />
+                        <Layout>
+                            <Component {...pageProps} />
+                        </Layout>
                     </ThemeProvider>
                 </CacheProvider>
             </Provider>
