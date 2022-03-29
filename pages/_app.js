@@ -8,6 +8,7 @@ import { CacheProvider } from '@emotion/react';
 import createEmotionCache from '../src/createEmotionCache';
 import { createTheme } from '@mui/material/styles';
 import { Provider } from 'react-redux';
+import { store } from '../src/redux/store';
 
 const theme = createTheme();
 
@@ -19,7 +20,7 @@ function MyApp(props) {
             <Head>
                 <meta name="viewport" content="initial-scale=1, width=device-width" />
             </Head>
-            <Provider store={{}}>
+            <Provider store={store}>
                 <CacheProvider value={emotionCache}>
                     <ThemeProvider theme={theme}>
                         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
