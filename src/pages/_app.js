@@ -4,10 +4,10 @@ import Head from 'next/head';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
-import { theme } from '../src/material-ui/theme';
-import createEmotionCache from '../src/material-ui/createEmotionCache';
+import { theme } from '../material-ui/theme';
+import createEmotionCache from '../material-ui/createEmotionCache';
 import { Provider } from 'react-redux';
-import { store } from '../src/redux/store';
+import { store } from '../redux/store';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
