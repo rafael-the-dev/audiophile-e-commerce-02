@@ -4,7 +4,8 @@ import { Hidden, IconButton } from '@mui/material'
 import classNames from 'classnames'
 import logo from '../../../public/images/shared/desktop/logo.svg'
 import Image from 'next/image'
-import { useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
+import Link from 'next/link'
 
 const Header = () => {
 
@@ -13,6 +14,28 @@ const Header = () => {
             <MenuIcon className="text-slate-50" />
         </IconButton>
     ), []);
+
+    const listItem = useCallback(([ href, label, index ]) => (
+        <li key={index}>
+            <Link href={href}>
+                <a>{ label }</a>
+            </Link>
+        </li>
+    ), []);
+
+    const navigation = useMemo(() => (
+        <nav>
+            <ul>
+                {
+                    [[ 'Home', '/'], [ 'Headphones', '/headphones'], 
+                        [ 'Speakers', '/speakers'], 
+                        [ 'Earphones', '/earphones' ]].map((tuple, index) => listItem([ ...tuple, index ]))
+                }
+            </ul>
+        </nav>
+    ), []);
+
+    console.log(navigation)
 
     return (
         <header className={classNames(`flex items-center justify-between text-slate-50 px-[5%] bg-black
