@@ -24,14 +24,16 @@ const Header = () => {
     const listItem = useCallback(([ label, href, index ]) => (
         <li className={classNames('mb-4 last:mb-0')} key={index}>
             <Link href={href}>
-                <a className={classNames('no-underline text-slate-50 uppercase')}>{ label }</a>
+                <a className={classNames('no-underline text-slate-50 uppercase hover:text-brown-500')}>
+                    { label }
+                </a>
             </Link>
         </li>
     ), []);
 
     const navigation = useMemo(() => (
         <nav className={classNames(`border-solid border-slate-100 border-t`)}>
-            <ul className={classNames('text-slate-50 flex flex-col items-center py-6')}>
+            <ul className={classNames('text-slate-50 flex flex-col items-center py-8')}>
                 {
                     [[ 'Home', '/'], [ 'Headphones', '/headphones'], 
                         [ 'Speakers', '/speakers'], 
