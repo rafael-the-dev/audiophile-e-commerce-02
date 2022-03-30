@@ -22,7 +22,7 @@ const Header = () => {
     ), [ openDrawer ]);
 
     const listItem = useCallback(([ label, href, index ]) => (
-        <li className={classNames('mb-4 last:mb-0')} key={index}>
+        <li className={classNames('mb-4 last:mb-0 md:mb-0 md:mr-3 md:last:mr-0')} key={index}>
             <Link href={href}>
                 <a className={classNames('no-underline text-slate-50 uppercase hover:text-brown-500')}>
                     { label }
@@ -32,8 +32,8 @@ const Header = () => {
     ), []);
 
     const navigation = useMemo(() => (
-        <nav className={classNames(`border-solid border-slate-100 border-t`)}>
-            <ul className={classNames('text-slate-50 flex flex-col items-center py-8')}>
+        <nav className={classNames(`border-solid border-slate-100 border-t md:border-0`)}>
+            <ul className={classNames('text-slate-50 flex flex-col items-center py-8 md:py-0 md:flex-row')}>
                 {
                     [[ 'Home', '/'], [ 'Headphones', '/headphones'], 
                         [ 'Speakers', '/speakers'], 
@@ -45,7 +45,7 @@ const Header = () => {
 
     return (
         <header className={classNames(`flex items-center justify-between text-slate-50 px-[5%] bg-black
-            py-3`)}>
+            py-3 md:py-6`)}>
             <Hidden smUp>
                 { menu }
             </Hidden>
@@ -58,17 +58,22 @@ const Header = () => {
                     src={logo}
                 />
             </div>
+            <Hidden mdDown>
+                { navigation }
+            </Hidden>
             <IconButton>
                 <ShoppingCartOutlinedIcon  className="text-slate-50" />
             </IconButton>
-            <Drawer
-                anchor="top"
-                classes={{ paper: classNames('bg-black top-[64px]'), root: classNames(classes.drawerRoot, 'top-[64px]')}}
-                open={openDrawer}
-                onClose={() => setOpenDrawer(false)}
-            >
-                { navigation }
-          </Drawer>
+            <Hidden mdUp>
+                <Drawer
+                    anchor="top"
+                    classes={{ paper: classNames('bg-black top-[64px]'), root: classNames(classes.drawerRoot, 'top-[64px]')}}
+                    open={openDrawer}
+                    onClose={() => setOpenDrawer(false)}
+                >
+                    { navigation }
+                </Drawer>
+            </Hidden>
         </header>
     )
 };
