@@ -12,16 +12,16 @@ const Home = () => {
                 <link rel='icon' href='/favicon.ico' />
             </Head>
             <section className={classNames(styles.hero, `bg-center bg-no-repeat bg-cover flex items-center 
-                justify-center px-[5%]`)}>
-                <div className={classNames(`text-center flex flex-col items-center`)}>
+                justify-center px-[5%] md:justify-start`)}>
+                <div className={classNames(`text-center flex flex-col items-center md:items-start md:text-left`)}>
                     <Typography
                         className={classNames(`uppercase text-slate-50 text-3xl before:block before:opacity-70
-                        before:mb-4 before:text-base`, styles.hero__title)}
+                        before:mb-4 before:text-base sm:text-4xl`, styles.hero__title)}
                         component="h1">
                         xx99 mark ||<br/>headphones
                     </Typography>
                     <Typography
-                        className={classNames(`mt-4 opacity-80 text-gray-200`)}>
+                        className={classNames(`mt-4 opacity-80 text-gray-200 sm:max-w-md`)}>
                         Experience natural, lifelike audio and exceptional build 
                         quality made for the passionate music enthusiast.
                     </Typography>
