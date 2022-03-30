@@ -11,7 +11,7 @@ const Home = () => {
                 <title>Alterado</title>
                 <link rel='icon' href='/favicon.ico' />
             </Head>
-            <section className={classNames(styles.hero, `bg-center bg-no-repeat bg-cover flex items-center 
+            <section className={classNames(styles.hero, ` bg-no-repeat bg-cover flex items-center 
                 justify-center px-[5%] md:justify-start`)}>
                 <div className={classNames(`text-center flex flex-col items-center md:items-start md:text-left`)}>
                     <Typography

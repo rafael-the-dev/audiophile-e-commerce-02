@@ -1,9 +1,25 @@
 .hero {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .3)), url('../../public/images/home/mobile/image-header.jpg');
-    height: 80vh;
+    background-position: center bottom 50px;
+    height: 90vh;
 }
 
 .hero__title::before {
     content: "New product" !important;
     letter-spacing: 5px;
+}
+
+@media screen and (min-width: 600px){
+    .hero {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .3)), url('../../public/images/home/tablet/image-header.jpg');
+        background-position: center bottom 0px;
+        height: 89vh;
+    }
+}
+
+@media screen and (min-width: 900px){
+    .hero {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .3)), url('../../public/images/home/desktop/image-hero.jpg');
+        height: 80vh;
+    }
 }
