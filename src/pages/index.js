@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { Typography } from '@mui/material'
 import classNames from 'classnames'
+import LinkButton from '../components/Link'
 
 const Home = () => {
     return (
@@ -10,12 +11,26 @@ const Home = () => {
                 <title>Alterado</title>
                 <link rel='icon' href='/favicon.ico' />
             </Head>
-            <section className={classNames(styles.hero, `bg-center bg-no-repeat bg-cover`)}>
-                <Typography
-                    className={classNames('uppercase text-slate-50')}
-                    component="h1">
-                    xx99 mark ||<br/>headphones
-                </Typography>
+            <section className={classNames(styles.hero, `bg-center bg-no-repeat bg-cover flex items-center 
+                justify-center px-[5%]`)}>
+                <div className={classNames(`text-center flex flex-col items-center`)}>
+                    <Typography
+                        className={classNames(`uppercase text-slate-50 text-3xl before:block before:opacity-70
+                        before:mb-4 before:text-base`, styles.hero__title)}
+                        component="h1">
+                        xx99 mark ||<br/>headphones
+                    </Typography>
+                    <Typography
+                        className={classNames(`mt-4 opacity-80 text-gray-200`)}>
+                        Experience natural, lifelike audio and exceptional build 
+                        quality made for the passionate music enthusiast.
+                    </Typography>
+                    <LinkButton 
+                        className="mt-6"
+                        href="/" 
+                        label="see product" 
+                    />
+                </div>
             </section>
       
         </>
