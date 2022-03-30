@@ -1,15 +1,31 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import { Typography } from '@mui/material'
+import classNames from 'classnames'
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Alterado</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+const Home = () => {
+    return (
+        <>
+            <Head>
+                <title>Alterado</title>
+                <link rel='icon' href='/favicon.ico' />
+            </Head>
+            <section className={classNames(styles.hero, `bg-center bg-no-repeat bg-cover`)}>
+                <Typography
+                    className={classNames('uppercase text-slate-50')}
+                    component="h1">
+                    xx99 mark ||<br/>headphones
+                </Typography>
+            </section>
+      
+        </>
+    );
+};
 
-      <main className={styles.main}>
+export default Home;
+
+/**
+ * <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href='https://nextjs.org'>Next.js!</a>
         </h1>
@@ -60,6 +76,4 @@ export default function Home() {
           <img src='/vercel.svg' alt='Vercel Logo' className={styles.logo} />
         </a>
       </footer>
-    </div>
-  );
-}
+ */
