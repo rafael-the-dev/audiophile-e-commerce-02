@@ -2,19 +2,25 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Hidden, IconButton } from '@mui/material'
 import classNames from 'classnames'
-import { ReactComponent as Logo } from '../../../public/images/shared/desktop/logo.svg'
+import logo from '../../../public/images/shared/desktop/logo.svg'
+import Image from 'next/image'
 
 const Header = () => {
+
     return (
-        <header className={classNames(`flex items-center justify-between text-slate-50 bg-black`)}>
+        <header className={classNames(`flex items-center justify-between text-slate-50 px-[5%] bg-black
+            py-3`)}>
             <IconButton>
-                <MenuIcon />
+                <MenuIcon className="text-slate-50" />
             </IconButton>
             <div>
-                
+                <Image 
+                    alt="logo"
+                    src={logo}
+                />
             </div>
             <IconButton>
-                <ShoppingCartOutlinedIcon />
+                <ShoppingCartOutlinedIcon  className="text-slate-50" />
             </IconButton>
         </header>
     )
