@@ -32,7 +32,7 @@ const Header = () => {
     ), []);
 
     const navigation = useMemo(() => (
-        <nav className={classNames(`border-solid border-slate-100 border-t md:border-0`)}>
+        <nav>
             <ul className={classNames('text-slate-50 flex flex-col items-center py-8 md:py-0 md:flex-row')}>
                 {
                     [[ 'Home', '/'], [ 'Headphones', '/headphones'], 
@@ -46,7 +46,7 @@ const Header = () => {
     return (
         <header className={classNames(`flex items-center justify-between text-slate-50 px-[5%] bg-black
             py-3 md:py-6 after:block after:border after:border-solid after:border-gray-100 after:h-[1px] 
-            after:w-[90%] after:absolute relative after:bottom-0 after:opacity-50`, classes.header)}>
+            after:w-[90%] after:absolute relative after:bottom-0 after:opacity-50`)}>
             <Hidden smUp>
                 { menu }
             </Hidden>

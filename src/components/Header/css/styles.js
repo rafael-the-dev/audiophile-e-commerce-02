@@ -7,8 +7,13 @@ export const useStyles = makeStyles(theme => ({
         }
     },
     drawerRoot: {
+        width: "calc(100% - 17px)",
         '& .MuiBackdrop-root': {
-            top: 64
+            top: 64,
+            width: "calc(100% - 17px)",
+        },
+        '& .MuiPaper-root': {
+            width: "calc(100% - 17px)",
         }
     }
 }))
