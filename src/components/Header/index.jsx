@@ -15,7 +15,7 @@ const Header = () => {
 
     const menu = useMemo(() => (
         <IconButton 
-            className={classNames('sm:mr-8')}
+            className={classNames('pl-0 sm:mr-8')}
             onClick={() => setOpenDrawer(o => !o)}>
             { openDrawer ? <CloseIcon className="text-slate-50" /> : <MenuIcon className="text-slate-50" /> }
         </IconButton>
@@ -45,7 +45,8 @@ const Header = () => {
 
     return (
         <header className={classNames(`flex items-center justify-between text-slate-50 px-[5%] bg-black
-            py-3 md:py-6`)}>
+            py-3 md:py-6 after:block after:border after:border-solid after:border-gray-100 after:h-[1px] 
+            after:w-[90%] after:absolute relative after:bottom-0 after:opacity-50`, classes.header)}>
             <Hidden smUp>
                 { menu }
             </Hidden>
@@ -61,7 +62,7 @@ const Header = () => {
             <Hidden mdDown>
                 { navigation }
             </Hidden>
-            <IconButton>
+            <IconButton className="pr-0">
                 <ShoppingCartOutlinedIcon  className="text-slate-50" />
             </IconButton>
             <Hidden mdUp>
