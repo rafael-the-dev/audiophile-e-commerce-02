@@ -34,7 +34,7 @@ const Footer = () => {
     ), []);
 
     const navigation = useMemo(() => (
-        <ul className={classNames('text-slate-50 flex flex-col items-center mt-8 sm:flex-row')}>
+        <ul className={classNames('text-slate-50 flex flex-col items-center mt-8 sm:flex-row md:mt-0')}>
             {
                 [[ 'Home', '/'], [ 'Headphones', '/headphones'], 
                     [ 'Speakers', '/speakers'], 
@@ -44,8 +44,9 @@ const Footer = () => {
     ), []);
 
     return (
-        <footer className={classNames(`bg-black flex flex-col items-center px-[5%] py-16 sm:items-start`)}>
-            <div>
+        <footer className={classNames(`bg-black flex flex-col items-center px-[5%] py-16 sm:items-start 
+            md:items-stretch`)}>
+            <div className='justify-between items-center md:flex'>
                 <Image 
                     alt='logo'
                     src={logo}
@@ -54,7 +55,7 @@ const Footer = () => {
             </div>
             <div className="mt-8 md:flex md:justify-between md:items-end md:w-full">
                 <Typography className="text-[0.93rem] leading-[1.4rem] text-center text-gray-200 
-                    opacity-80 sm:text-left md:max-w-sm">
+                    opacity-80 sm:text-left md:max-w-xl">
                     Audiophile is an all in one stop to fulfill your audio needs. We're a 
                     small team of music lovers and sound specialists who are devoted 
                     to helping you get the most out of personal audio. Come and visit 
@@ -69,7 +70,7 @@ const Footer = () => {
                 <Typography className="text-[0.91rem] text-gray-200 opacity-80">
                     Copyright 2021. All Rights Reserved
                 </Typography>
-                <Hidden msUp>
+                <Hidden mdUp>
                     { socialMedia }
                 </Hidden>
             </div>
