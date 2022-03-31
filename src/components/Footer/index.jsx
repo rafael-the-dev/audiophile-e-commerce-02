@@ -12,13 +12,13 @@ const Footer = () => {
     const socialMedia = useMemo(() => (
         <ul className="flex items-center mt-4 sm:mt-0">
             <li className='mr-3'>
-                <FacebookIcon className="text-slate-50" />
+                <FacebookIcon className="text-slate-50 hover:text-brown-500" />
             </li>
             <li className='mr-3'>
-                <TwitterIcon className="text-slate-50" />
+                <TwitterIcon className="text-slate-50 hover:text-brown-500" />
             </li>
             <li>
-                <InstagramIcon className="text-slate-50" />
+                <InstagramIcon className="text-slate-50 hover:text-brown-500" />
             </li>
         </ul>
     ), []);
