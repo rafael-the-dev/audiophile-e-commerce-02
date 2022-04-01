@@ -7,14 +7,18 @@ import bestGearDesktopImage from '../../../public/images/shared/desktop/image-be
 import Paragraph from '../Paragraph'
 
 const BestGear = () => {
+    const ImageContainer = ({ smUp, smDown, mdUp, mdDown, src }) => (
+        <Hidden smUp={smUp} smDown={smDown} mdUp={mdUp} mdDown={mdDown} >
+            <Image 
+                alt='best gear'
+                src={src}
+            />
+        </Hidden>
+    );
+
     return (
         <section className={classNames(`px-[5%]`)}>
-            <Hidden>
-                <Image 
-                    alt='best gear'
-                    src={bestGearImage}
-                />
-            </Hidden>
+            <ImageContainer smUp={true} src={bestGearImage} />
             <div className='text-center'>
                 <Paragraph>
                     Located at the heart of New York City, Audiophile is the premier 

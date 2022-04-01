@@ -1,11 +1,15 @@
 import Header from '../Header'
 import Footer from '../Footer'
+import BestGear from '../BestGear';
 
 const Layout = ({ children }) => {
     return (
         <>
             <Header />
-            <main>{children}</main>
+            <main>
+                {children}
+                <BestGear />
+            </main>
             <Footer />
         </>
     )
