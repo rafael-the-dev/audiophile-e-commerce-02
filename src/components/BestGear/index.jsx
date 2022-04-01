@@ -17,11 +17,11 @@ const BestGear = () => {
     );
 
     return (
-        <section className={classNames(`px-[5%] pb-16`)}>
+        <section className={classNames(`px-[5%] py-16`)}>
             <ImageContainer smUp={true} src={bestGearImage} />
             <ImageContainer smDown={true} mdUp={true} src={bestGearTabletImage} />
             <ImageContainer mdDown={true} src={bestGearDesktopImage} />
-            <div className='text-center mt-4'>
+            <div className='text-center mt-4 sm:mt-8'>
                 <Typography 
                     className='font-bold mb-6 text-3xl'
                     component="h2">
