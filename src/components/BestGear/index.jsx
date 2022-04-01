@@ -17,15 +17,16 @@ const BestGear = () => {
     );
 
     return (
-        <section className={classNames(`px-[5%] py-16`)}>
+        <section className={classNames(`px-[5%] py-16 md:flex md:flex-row-reverse items-center
+            justify-between`)}>
             <ImageContainer smUp={true} src={bestGearImage} />
             <ImageContainer smDown={true} mdUp={true} src={bestGearTabletImage} />
             <ImageContainer mdDown={true} src={bestGearDesktopImage} />
-            <div className='text-center mt-4 sm:mt-8'>
+            <div className='text-center mt-4 sm:mt-8 md:w-[47%] md:text-left'>
                 <Typography 
-                    className='font-bold mb-6 text-3xl'
+                    className='font-bold mb-6 text-3xl md:text-[2.8rem] md:leading-[3rem]'
                     component="h2">
-                    Bringing you the <em className='text-brown-500'>best</em> audio gear
+                    Bringing you the<Hidden mdDown><br/></Hidden> <em className='text-brown-500'>best</em> audio gear
                 </Typography>
                 <Paragraph>
                     Located at the heart of New York City, Audiophile is the premier 
