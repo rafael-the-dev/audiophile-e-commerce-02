@@ -45,7 +45,7 @@ const Footer = () => {
 
     return (
         <footer className={classNames(`bg-black flex flex-col items-center px-[5%] py-16 sm:items-start 
-            md:items-stretch`)}>
+            md:items-stretch md:hidden`)}>
             <div className='justify-between items-center md:flex'>
                 <Image 
                     alt='logo'
