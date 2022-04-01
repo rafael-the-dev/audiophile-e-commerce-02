@@ -17,9 +17,16 @@ const BestGear = () => {
     );
 
     return (
-        <section className={classNames(`px-[5%]`)}>
+        <section className={classNames(`px-[5%] pb-16`)}>
             <ImageContainer smUp={true} src={bestGearImage} />
-            <div className='text-center'>
+            <ImageContainer smDown={true} mdUp={true} src={bestGearTabletImage} />
+            <ImageContainer mdDown={true} src={bestGearDesktopImage} />
+            <div className='text-center mt-4'>
+                <Typography 
+                    className='font-bold mb-6 text-3xl'
+                    component="h2">
+                    Bringing you the <em className='text-brown-500'>best</em> audio gear
+                </Typography>
                 <Paragraph>
                     Located at the heart of New York City, Audiophile is the premier 
                     store for high end headphones, earphones, speakers, and audio accessories. 
