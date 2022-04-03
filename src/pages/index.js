@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css';
 import { Typography } from '@mui/material'
 import classNames from 'classnames'
 import LinkButton from '../components/Link'
+import CategoriesPreview from '../components/CategoriesPreview'
 
 const Home = () => {
     return (
@@ -32,7 +33,7 @@ const Home = () => {
                     />
                 </div>
             </section>
-      
+            <CategoriesPreview />
         </>
     );
 };
