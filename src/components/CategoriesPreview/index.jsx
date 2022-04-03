@@ -5,7 +5,7 @@ import Card from './components/Card'
 
 const CategoriesPreview = () => {
     return (
-        <section>
+        <section  className="px-[5%]">
             <Card 
                 image={headphoneImage}
                 name="headphones"

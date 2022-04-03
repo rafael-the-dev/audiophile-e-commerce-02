@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image'
-import { Typography } from '@mui/material'
+import { Button, Typography } from '@mui/material'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const Card = ({ image, name, url }) => {
     return (
-        <article>
+        <article className="bg-gray-300 mb-8 py-6 flex flex-col items-center rounded-xl">
             <Image 
                 alt={name}
                 className="h-[180px]"
@@ -16,7 +17,13 @@ const Card = ({ image, name, url }) => {
                 { name }
             </Typography>
             <Link href={url}>
-                <a></a>
+                <a className='no-underline'>
+                    <Button 
+                        className="text-zinc-800"
+                        endIcon={<ArrowForwardIosIcon className="text-brown-500" />}>
+                        shop
+                    </Button>
+                </a>
             </Link>
         </article>
     );
