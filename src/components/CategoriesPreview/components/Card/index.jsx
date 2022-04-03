@@ -7,10 +7,11 @@ const Card = ({ image, name, url }) => {
         <article>
             <Image 
                 alt={name}
+                className="h-[180px]"
                 src={image}
             />
             <Typography
-                className=""
+                className="font-bold text-center uppercase text-xl"
                 component="h2">
                 { name }
             </Typography>
