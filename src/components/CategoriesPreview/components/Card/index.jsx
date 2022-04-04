@@ -8,8 +8,9 @@ const Card = ({ image, name, url }) => {
         <article className="bg-gray-300 mb-8 py-6 flex flex-col items-center rounded-xl">
             <Image 
                 alt={name}
-                className="h-[180px]"
+                height={150}
                 src={image}
+                width={150}
             />
             <Typography
                 className="font-bold text-center uppercase text-xl"
