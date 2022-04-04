@@ -7,11 +7,12 @@ import classNames from 'classnames'
 
 const Card = ({ image, name, url }) => {
     const classes = useStyles();
+    
     return (
         <article className="bg-gray-300 mb-16 pt-24 pb-6 flex flex-col items-center relative 
-            rounded-xl">
+            rounded-xl sm:w-[31.3333%]">
             <div
-                className={classNames("absolute left-0 top-0 translate-x-[50%]", classes.imageContainer)}>
+                className={classNames("absolute left-[28%] top-[-23%] translate-x-[50%]", classes.imageContainer)}>
                 <Image 
                     alt={name}
                     height={150}

@@ -5,7 +5,7 @@ import Card from './components/Card'
 
 const CategoriesPreview = () => {
     return (
-        <section  className="px-[5%]">
+        <section  className="px-[5%] sm:flex align-stretch justify-between sm:mt-20">
             <Card 
                 image={headphoneImage}
                 name="headphones"
