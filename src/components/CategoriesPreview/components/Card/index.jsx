@@ -2,16 +2,23 @@ import Link from 'next/link';
 import Image from 'next/image'
 import { Button, Typography } from '@mui/material'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { useStyles } from './styles';
+import classNames from 'classnames'
 
 const Card = ({ image, name, url }) => {
+    const classes = useStyles();
     return (
-        <article className="bg-gray-300 mb-8 py-6 flex flex-col items-center rounded-xl">
-            <Image 
-                alt={name}
-                height={150}
-                src={image}
-                width={150}
-            />
+        <article className="bg-gray-300 mb-16 pt-24 pb-6 flex flex-col items-center relative 
+            rounded-xl">
+            <div
+                className={classNames("absolute left-0 top-0 translate-x-[50%]", classes.imageContainer)}>
+                <Image 
+                    alt={name}
+                    height={150}
+                    src={image}
+                    width={150}
+                />
+            </div>
             <Typography
                 className="font-bold text-center uppercase text-xl"
                 component="h2">
