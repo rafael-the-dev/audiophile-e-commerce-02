@@ -30,4 +30,13 @@
         background-image: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .3)), url('../../public/images/home/desktop/image-hero.jpg');
         height: 80vh;
     }
+
+    .speaker {
+        background-position: left center !important;
+        background-size: 700px;
+    }
+
+    .speaker__imageContainer {
+        transform: translateY(59px);
+    }
 }

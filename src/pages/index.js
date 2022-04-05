@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { Typography } from '@mui/material'
+import { Hidden, Typography } from '@mui/material'
 import classNames from 'classnames'
 import Image from 'next/image'
 import LinkButton from '../components/Link'
@@ -9,6 +9,15 @@ import Paragraph from '../components/Paragraph'
 import speakerZX9 from '../../public/images/home/mobile/image-speaker-zx9.png'
 
 const Home = () => {
+    const ImageContainer = ({ height, width }) => (
+      <Image
+        alt="speaker"
+        height={height}
+        src={speakerZX9}
+        width={width}
+      />
+    );
+
     return (
         <>
             <Head>
@@ -40,20 +49,25 @@ const Home = () => {
             <section className={classNames("mt-8 px-[5%]")}>
                 <div 
                     className={classNames(`bg-brown-500 rounded-lg py-8 px-4 flex flex-col items-center
-                    bg-center bg-cover bg-no-repeat sm:py-12`, styles.speaker)}>
-                    <Image
-                      alt="speaker"
-                      height={200}
-                      src={speakerZX9}
-                      width={160}
-                    />
-                    <div className="text-center mt-6 flex flex-col items-center">
+                    bg-center bg-cover bg-no-repeat sm:py-12 md:flex-row md:justify-between md:px-[10%]
+                    md:overflow-hidden`, styles.speaker)}>
+                    <Hidden mdUp>
+                      <ImageContainer height={200} width={160} />
+                    </Hidden>
+                    <Hidden mdDown>
+                      <div className={styles.speaker__imageContainer}>
+                        <ImageContainer height={400} width={320} />
+                      </div>
+                    </Hidden>
+                    <div 
+                      className="text-center mt-6 flex flex-col items-center md:text-left md:items-start
+                      md:max-w-[50%]">
                       <Typography
                         className="font-bold uppercase text-slate-100 text-3xl"
                         component="h2">
                         zx9<br/>speaker
                       </Typography>
-                      <Paragraph className="text-slate-100 sm:max-w-[60%]">
+                      <Paragraph className="text-slate-100 sm:max-w-[60%] md:max-w-[80%]">
                         Upgrade to premium speakers that are phenomenally built to 
                         deliver truly remarkable sound.
                       </Paragraph>
