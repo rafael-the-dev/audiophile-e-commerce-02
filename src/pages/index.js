@@ -40,7 +40,7 @@ const Home = () => {
             <section className={classNames("mt-8 px-[5%]")}>
                 <div 
                     className={classNames(`bg-brown-500 rounded-lg py-8 px-4 flex flex-col items-center
-                    bg-center bg-cover bg-no-repeat`, styles.speaker)}>
+                    bg-center bg-cover bg-no-repeat sm:py-12`, styles.speaker)}>
                     <Image
                       alt="speaker"
                       height={200}
@@ -53,7 +53,7 @@ const Home = () => {
                         component="h2">
                         zx9<br/>speaker
                       </Typography>
-                      <Paragraph className="text-slate-100">
+                      <Paragraph className="text-slate-100 sm:max-w-[60%]">
                         Upgrade to premium speakers that are phenomenally built to 
                         deliver truly remarkable sound.
                       </Paragraph>
