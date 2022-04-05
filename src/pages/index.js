@@ -96,6 +96,21 @@ const Home = () => {
                   />
               </div>
             </section>
+            <section className="px-[5%] mt-6">
+              <div className="bg-gray-300 flex flex-col px-4 py-8 rounded-lg">
+                  <Typography
+                    className="font-bold uppercase text-3xl"
+                    component="h2">
+                    Yz1 earphone
+                  </Typography>
+                  <LinkButton 
+                    buttonClassName={styles.zx7Speaker__Button}
+                    className="mt-6"
+                    href="/"
+                    label="See product" 
+                  />
+              </div>
+            </section>
         </>
     );
 };
