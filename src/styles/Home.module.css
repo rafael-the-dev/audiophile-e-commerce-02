@@ -34,6 +34,11 @@
         background-position: center bottom 0px;
         height: 89vh;
     }
+
+    .zx7Speaker {
+        background-image: url(/images/home/tablet/image-speaker-zx7.jpg);
+        height: 350px;
+    }
 }
 
 @media screen and (min-width: 900px){
@@ -49,5 +54,9 @@
 
     .speaker__imageContainer {
         transform: translateY(59px);
+    }
+
+    .zx7Speaker {
+        background-image: url(/images/home/desktop/image-speaker-zx7.jpg);
     }
 }

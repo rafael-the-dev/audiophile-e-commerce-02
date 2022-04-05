@@ -82,7 +82,7 @@ const Home = () => {
             </section>
             <section className="px-[5%] mt-6">
               <div className={classNames(`bg-cover bg-no-repeat bg-center px-4 flex flex-col justify-center
-                rounded-lg`, styles.zx7Speaker)}>
+                rounded-lg sm:px-[5%] md:px-[10%]`, styles.zx7Speaker)}>
                   <Typography
                     className="font-bold uppercase text-3xl"
                     component="h2">
