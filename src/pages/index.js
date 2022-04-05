@@ -2,8 +2,11 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { Typography } from '@mui/material'
 import classNames from 'classnames'
+import Image from 'next/image'
 import LinkButton from '../components/Link'
 import CategoriesPreview from '../components/CategoriesPreview'
+import Paragraph from '../components/Paragraph'
+import speakerZX9 from '../../public/images/home/mobile/image-speaker-zx9.png'
 
 const Home = () => {
     return (
@@ -34,6 +37,33 @@ const Home = () => {
                 </div>
             </section>
             <CategoriesPreview />
+            <section className={classNames("mt-8 px-[5%]")}>
+                <div className={classNames("bg-brown-500 rounded-lg py-8 px-4 flex flex-col items-center")}>
+                    <Image
+                      alt="speaker"
+                      height={200}
+                      src={speakerZX9}
+                      width={160}
+                    />
+                    <div className="text-center mt-6 flex flex-col items-center">
+                      <Typography
+                        className="font-bold uppercase text-slate-100 text-3xl"
+                        component="h2">
+                        zx9<br/>speaker
+                      </Typography>
+                      <Paragraph className="text-slate-100">
+                        Upgrade to premium speakers that are phenomenally built to 
+                        deliver truly remarkable sound.
+                      </Paragraph>
+                      <LinkButton 
+                        buttonClassName={styles.speaker__Button}
+                        className="mt-6"
+                        href="/"
+                        label="See product" 
+                      />
+                    </div>
+                </div>
+            </section>
         </>
     );
 };

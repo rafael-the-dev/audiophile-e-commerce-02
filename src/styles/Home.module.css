@@ -9,6 +9,10 @@
     letter-spacing: 5px;
 }
 
+.speaker__Button {
+    background-color: #000 !important;
+}
+
 @media screen and (min-width: 600px){
     .hero {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .3)), url('../../public/images/home/tablet/image-header.jpg');

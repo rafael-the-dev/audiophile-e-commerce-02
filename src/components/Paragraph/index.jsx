@@ -1,10 +1,10 @@
 import { Typography } from '@mui/material'
 import classNames from 'classnames';
 
-const Paragraph = ({ children }) => {
+const Paragraph = ({ className, children }) => {
     return (
         <Typography
-            className={classNames(`mt-4 opacity-80`)}>
+            className={classNames(`mt-4 opacity-80`, className)}>
             { children }
         </Typography>
     );
