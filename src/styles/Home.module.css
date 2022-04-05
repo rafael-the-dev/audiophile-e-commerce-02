@@ -9,6 +9,10 @@
     letter-spacing: 5px;
 }
 
+.speaker {
+    background-image: url(/images/home/desktop/pattern-circles.svg);
+}
+
 .speaker__Button {
     background-color: #000 !important;
 }

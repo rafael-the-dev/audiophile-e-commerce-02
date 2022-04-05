@@ -38,7 +38,9 @@ const Home = () => {
             </section>
             <CategoriesPreview />
             <section className={classNames("mt-8 px-[5%]")}>
-                <div className={classNames("bg-brown-500 rounded-lg py-8 px-4 flex flex-col items-center")}>
+                <div 
+                    className={classNames(`bg-brown-500 rounded-lg py-8 px-4 flex flex-col items-center
+                    bg-center bg-cover bg-no-repeat`, styles.speaker)}>
                     <Image
                       alt="speaker"
                       height={200}
