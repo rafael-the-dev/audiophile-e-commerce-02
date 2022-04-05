@@ -7,13 +7,17 @@ import LinkButton from '../components/Link'
 import CategoriesPreview from '../components/CategoriesPreview'
 import Paragraph from '../components/Paragraph'
 import speakerZX9 from '../../public/images/home/mobile/image-speaker-zx9.png'
+import yx1EarphoneImage from '../../public/images/home/mobile/image-earphones-yx1.jpg'
+import yx1EarphoneTabletImage from '../../public/images/home/mobile/image-earphones-yx1.jpg'
+import yx1EarphoneDesktopImage from '../../public/images/home/mobile/image-earphones-yx1.jpg'
 
 const Home = () => {
-    const ImageContainer = ({ height, width }) => (
+    const ImageContainer = ({ className, height, src, width }) => (
       <Image
         alt="speaker"
+        className={className}
         height={height}
-        src={speakerZX9}
+        src={src}
         width={width}
       />
     );
@@ -52,11 +56,11 @@ const Home = () => {
                     bg-center bg-cover bg-no-repeat sm:py-12 md:flex-row md:justify-between md:px-[10%]
                     md:overflow-hidden`, styles.speaker)}>
                     <Hidden mdUp>
-                      <ImageContainer height={200} width={160} />
+                      <ImageContainer height={200} src={speakerZX9} width={160} />
                     </Hidden>
                     <Hidden mdDown>
                       <div className={styles.speaker__imageContainer}>
-                        <ImageContainer height={400} width={320} />
+                        <ImageContainer height={400} src={speakerZX9} width={320} />
                       </div>
                     </Hidden>
                     <div 
@@ -96,8 +100,18 @@ const Home = () => {
                   />
               </div>
             </section>
-            <section className="px-[5%] mt-6">
-              <div className="bg-gray-300 flex flex-col px-4 py-8 rounded-lg">
+            <section className="px-[5%] mt-6 sm:flex sm:items-stretch">
+              <Hidden smUp>
+                <ImageContainer className="rounded-lg" src={yx1EarphoneImage} />
+              </Hidden>
+              <Hidden smDown mdUp>
+                <ImageContainer className="rounded-lg" height={300} src={yx1EarphoneTabletImage} width={300} />
+              </Hidden>
+              <Hidden mdDown>
+                <ImageContainer className="rounded-lg" height={300} src={yx1EarphoneDesktopImage} width={400} />
+              </Hidden>
+              <div className="bg-gray-300 flex flex-col mt-4 px-4 py-8 rounded-lg sm:mt-0 sm:grow sm:ml-4
+                sm:justify-center sm:px-[5%]">
                   <Typography
                     className="font-bold uppercase text-3xl"
                     component="h2">
