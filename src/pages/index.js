@@ -108,10 +108,10 @@ const Home = () => {
                 <ImageContainer className="rounded-lg" height={300} src={yx1EarphoneTabletImage} width={300} />
               </Hidden>
               <Hidden mdDown>
-                <ImageContainer className="rounded-lg" height={300} src={yx1EarphoneDesktopImage} width={400} />
+                <ImageContainer className="rounded-lg" height={350} src={yx1EarphoneDesktopImage} width={500} />
               </Hidden>
               <div className="bg-gray-300 flex flex-col mt-4 px-4 py-8 rounded-lg sm:mt-0 sm:grow sm:ml-4
-                sm:justify-center sm:px-[5%]">
+                sm:justify-center sm:px-[5%] md:ml-8">
                   <Typography
                     className="font-bold uppercase text-3xl"
                     component="h2">
