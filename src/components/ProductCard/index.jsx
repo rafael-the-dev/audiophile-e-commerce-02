@@ -8,24 +8,25 @@ import { useStyles } from './styles'
 export const Container = ({ description, isCategory, image, name }) => {
     const classes = useStyles();
     return (
-        <article>
+        <article className="mb-14">
             <div className={classes.imageContainer} >
                 <Image 
                     alt={name}
+                    className="rounded-lg"
                     layout="fill"
                     src={`/images/${image.mobile}`}
                 />
             </div>
-            <div className={classNames("flex flex-col", { 'items-center text-center': isCategory })}>
+            <div className={classNames("flex flex-col pt-8", { 'items-center text-center': isCategory })}>
                 <Typography
-                    className={classNames(`text-xl`)}
+                    className={classNames(`font-semibold text-2xl`)}
                     component="h2">
                     { name }
                 </Typography>
                 <Paragraph>
                     { description }
                 </Paragraph>
-                { isCategory && <LinkButton label="See product" href="/" /> }
+                { isCategory && <LinkButton className="mt-6" label="See product" href="/" /> }
             </div>
         </article>
     );
