@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material'
+import data from '../../../public/data.json'
 
 export const getStaticPaths = async (context) => {
     return {
@@ -12,22 +13,25 @@ export const getStaticPaths = async (context) => {
 };
 
 export const getStaticProps = async (context) => {
-    console.log(context)
+    const { category } = context.params;
+    const list = data.filter(item => item.category === category);
+
     return {
         props: {
-
+            products: list,
+            category
         }
     }
 };
 
-const Container = () => {
+const Container = ({ category, products }) => {
     return (
         <>
             <section className="bg-black py-6">
                 <Typography
-                    className="font-bold text-2xl text-slate-100 text-center"
+                    className="font-bold text-2xl uppercase text-slate-100 text-center"
                     component="h1">
-                    Hello World
+                    { category }
                 </Typography>
             </section>
         </>
