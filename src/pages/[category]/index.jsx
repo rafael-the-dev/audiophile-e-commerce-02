@@ -1,5 +1,6 @@
 import { Typography } from '@mui/material'
 import data from '../../../public/data.json'
+import ProductCard from '../../components/ProductCard'
 
 export const getStaticPaths = async (context) => {
     return {
@@ -25,6 +26,7 @@ export const getStaticProps = async (context) => {
 };
 
 const Container = ({ category, products }) => {
+    console.log(products)
     return (
         <>
             <section className="bg-black py-6">
@@ -33,6 +35,13 @@ const Container = ({ category, products }) => {
                     component="h1">
                     { category }
                 </Typography>
+            </section>
+            <section className='px-[5%] pt-12'>
+                {
+                    products.map((product, index) => (
+                        <ProductCard key={index} isCategory={true} { ...product } />
+                    ))
+                }
             </section>
         </>
     );
