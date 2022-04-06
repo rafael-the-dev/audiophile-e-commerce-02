@@ -1,5 +1,25 @@
 import { Typography } from '@mui/material'
 
+export const getStaticPaths = async (context) => {
+    return {
+        paths: [
+            { params: { category: 'headphones' }},
+            { params: { category: 'earphones' }},
+            { params: { category: 'speakers' }}
+        ],
+        fallback: false
+    };
+};
+
+export const getStaticProps = async (context) => {
+    console.log(context)
+    return {
+        props: {
+
+        }
+    }
+};
+
 const Container = () => {
     return (
         <>
