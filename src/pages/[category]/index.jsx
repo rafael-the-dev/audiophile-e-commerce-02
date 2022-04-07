@@ -37,7 +37,7 @@ const Container = ({ category, products }) => {
                     { category }
                 </Typography>
             </section>
-            <section className='px-[5%] pt-12 pb-8'>
+            <section className='px-[5%] pt-12 pb-8 md:pt-20 md:pb-4'>
                 {
                     products.map((product, index) => (
                         <ProductCard key={index} isCategory={true} { ...product } />

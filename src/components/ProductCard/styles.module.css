@@ -3,3 +3,16 @@
     position: relative;
     width: 100%;
 }
+
+@media screen and (min-width: 600px) {
+    .imageContainer {
+        height: 538px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .imageContainer {
+        height: 450px;
+        width: 450px;
+    }
+}
