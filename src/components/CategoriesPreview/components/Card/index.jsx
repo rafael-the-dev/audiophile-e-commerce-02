@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Button, Typography } from '@mui/material'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useStyles } from './styles';
+import styles from './styles.module.css'
 import classNames from 'classnames'
 
 const Card = ({ image, name, url }) => {
@@ -12,7 +13,7 @@ const Card = ({ image, name, url }) => {
         <article className="bg-gray-300 mb-16 pt-24 pb-6 flex flex-col items-center relative 
             rounded-xl sm:w-[31.3333%]">
             <div
-                className={classNames("absolute left-[28%] top-[-23%] translate-x-[50%]", classes.imageContainer)}>
+                className={classNames("absolute left-0 top-0 w-full flex justify-center", styles.imageContainer)}>
                 <Image 
                     alt={name}
                     height={150}
