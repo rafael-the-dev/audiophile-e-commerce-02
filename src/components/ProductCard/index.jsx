@@ -14,13 +14,11 @@ export const Container = ({ description, isCategory, image, name }) => {
             className="rounded-lg"
             layout="fill"
             src={`/images/${imageName}`}
-            objectFit="cover"
-            objectPosition="center"
         />
     );
 
     return (
-        <article className="mb-14 flex flex-col items-center md:flex-row md:justify-between even:flex-row-reverse">
+        <article className="mb-14 flex flex-col items-center md:flex-row md:justify-between md:even:flex-row-reverse">
             <div className={styles.imageContainer} >
                 <Hidden smUp>
                     <ImageContainer imageName={image.mobile} />

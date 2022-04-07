@@ -8,6 +8,11 @@
     .imageContainer {
         height: 538px;
     }
+
+    .imageContainer img {
+        object-fit: cover;
+        object-position: center;
+    }
 }
 
 @media screen and (min-width: 900px) {
