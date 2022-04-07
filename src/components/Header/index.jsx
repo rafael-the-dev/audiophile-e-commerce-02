@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { useCallback, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { useStyles } from './css/styles'
+import styles from './css/styles.module.css'
 import CloseIcon from '@mui/icons-material/Close';
 
 const Header = () => {
@@ -46,7 +47,7 @@ const Header = () => {
     return (
         <header className={classNames(`flex items-center justify-between text-slate-50 px-[5%] bg-black
             py-3 md:py-6 after:block after:border after:border-solid after:border-gray-100 after:h-[1px] 
-            after:w-[90%] after:absolute relative after:bottom-0 after:opacity-50`, )}>
+            after:w-[90%] after:absolute relative after:bottom-0 after:opacity-50`, styles.header)}>
             <Hidden smUp>
                 { menu }
             </Hidden>
