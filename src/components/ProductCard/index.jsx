@@ -3,13 +3,14 @@ import { Typography } from '@mui/material'
 import classNames from 'classnames'
 import Paragraph from '../Paragraph'
 import LinkButton from '../Link'
-import { useStyles } from './styles'
+import styles from './styles.module.css'
 
 export const Container = ({ description, isCategory, image, name }) => {
-    const classes = useStyles();
+    //const classes = useStyles();
+
     return (
         <article className="mb-14">
-            <div className={classes.imageContainer} >
+            <div className={styles.imageContainer} >
                 <Image 
                     alt={name}
                     className="rounded-lg"
