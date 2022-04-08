@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Hidden, Typography } from '@mui/material'
 import Link from '../../../../../components/Link'
 import classNames from 'classnames'
+import styles from './css/styles.module.css'
 
 const Container = ({ image, name, slug }) => {
     const ImageContainer = ({ mdDown, mdUp, src, smDown, smUp }) => {
@@ -18,15 +19,15 @@ const Container = ({ image, name, slug }) => {
 
     return (
         <article className="flex flex-col items-center">
-            <div className={classNames("w-full")}>
+            <div className={classNames(styles.imageContainer, "w-full")}>
                 <ImageContainer src={getImageURL(image.mobile)} smUp={true} />
                 <ImageContainer src={getImageURL(image.tablet)} smDown={true} mdUp={true} />
                 <ImageContainer src={getImageURL(image.desktop)} mdDown={true} />
             </div>
             <Typography
-                className=""
+                className="font-bold uppercase text-2xl"
                 component="h3">
-
+                { name }
             </Typography>
             <Link 
                 className="mt-6"
