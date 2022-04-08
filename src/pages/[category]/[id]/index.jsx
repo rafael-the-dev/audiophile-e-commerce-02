@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Button, Typography } from '@mui/material'
-import CategoriesPreview from '../../../components/CategoriesPreview';
-import data from "../../../../public/data.json"
+import CategoriesPreview from 'src/components/CategoriesPreview';
+import data from "public/data.json"
 import { useMemo } from 'react'
 import Card from './components/Card'
 
