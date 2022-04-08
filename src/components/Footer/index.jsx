@@ -1,4 +1,4 @@
-import logo from '../../../public/images/shared/desktop/logo.svg'
+import logo from 'public/images/shared/desktop/logo.svg'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';

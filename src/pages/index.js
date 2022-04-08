@@ -1,15 +1,15 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import styles from 'src/styles/Home.module.css';
 import { Hidden, Typography } from '@mui/material'
 import classNames from 'classnames'
 import Image from 'next/image'
-import LinkButton from '../components/Link'
-import CategoriesPreview from '../components/CategoriesPreview'
-import Paragraph from '../components/Paragraph'
-import speakerZX9 from '../../public/images/home/mobile/image-speaker-zx9.png'
-import yx1EarphoneImage from '../../public/images/home/mobile/image-earphones-yx1.jpg'
-import yx1EarphoneTabletImage from '../../public/images/home/mobile/image-earphones-yx1.jpg'
-import yx1EarphoneDesktopImage from '../../public/images/home/mobile/image-earphones-yx1.jpg'
+import LinkButton from 'src/components/Link'
+import CategoriesPreview from 'src/components/CategoriesPreview'
+import Paragraph from 'src/components/Paragraph'
+import speakerZX9 from 'public/images/home/mobile/image-speaker-zx9.png'
+import yx1EarphoneImage from 'public/images/home/mobile/image-earphones-yx1.jpg'
+import yx1EarphoneTabletImage from 'public/images/home/mobile/image-earphones-yx1.jpg'
+import yx1EarphoneDesktopImage from 'public/images/home/mobile/image-earphones-yx1.jpg'
 
 const Home = () => {
     const ImageContainer = ({ className, height, src, width }) => (

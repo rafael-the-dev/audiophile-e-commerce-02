@@ -2,7 +2,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Drawer, Hidden, IconButton } from '@mui/material'
 import classNames from 'classnames'
-import logo from '../../../public/images/shared/desktop/logo.svg'
+import logo from 'public/images/shared/desktop/logo.svg'
 import Image from 'next/image'
 import { useCallback, useMemo, useState } from 'react'
 import Link from 'next/link'
