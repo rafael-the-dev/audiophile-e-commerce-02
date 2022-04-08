@@ -1,7 +1,9 @@
 import Link from 'next/link'
-import { Button } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 import CategoriesPreview from '../../../components/CategoriesPreview';
 import data from "../../../../public/data.json"
+import { useMemo } from 'react'
+import Card from './components/Card'
 
 export const getStaticPaths = async () => {
     const paths = data.reduce((prevValue, currentValue) => {
@@ -33,6 +35,12 @@ export const getStaticProps = async (context) => {
 };
 
 const Container = ({ product }) => {
+    if(!Boolean(product)) return <Typography className="text-3xl" component="h1">Loading...</Typography>;
+
+    const othersProducts = useMemo(() => (
+        product.others.map((other, index) => <Card key={index} { ...other }/>)
+    ))
+
     return (
         <>
             <div className="px-[5%] py-6">
@@ -42,6 +50,18 @@ const Container = ({ product }) => {
                     </a>
                 </Link>
             </div>
+            <section className="px-[5%] pb-12">
+                <Typography
+                    className="font-bold mb-8 uppercase text-center text-2xl"
+                    component="h2">
+                    You may also like
+                </Typography>
+                <div>
+                    {
+                        othersProducts
+                    }
+                </div>
+            </section>
             <CategoriesPreview />
         </>
     );
