@@ -6,6 +6,7 @@ import data from "public/data.json"
 import { useMemo } from 'react'
 import Card from './components/Card'
 import classNames from 'classnames';
+import styles from './css/styles.module.css'
 
 export const getStaticPaths = async () => {
     const paths = data.reduce((prevValue, currentValue) => {
@@ -54,18 +55,18 @@ const Container = ({ product }) => {
                     </a>
                 </Link>
             </div>
-            <ul className={classNames("px-[5%]")}>
-                <li className="h-[180px] relative rounded-lg mb-4">
+            <ul className={classNames(styles.gallery, "px-[5%] sm:grid justify-between")}>
+                <li className={classNames(styles.gallery__first, "h-[180px] sm:h-auto relative rounded-lg mb-4 sm:mb-0")}>
                     <ImageContainer isRelative name="" src={gallery.first.mobile} smUp={true} />
                     <ImageContainer isRelative name="" src={gallery.first.tablet} smDown={true} mdUp={true} />
                     <ImageContainer isRelative name="" src={gallery.first.desktop} mdDown={true} />
                 </li>
-                <li className="h-[180px] relative rounded-lg mb-4">
+                <li className={classNames(styles.gallery__second, "h-[180px] sm:h-auto relative rounded-lg mb-4 sm:mb-0")}>
                     <ImageContainer isRelative name="" src={gallery.second.mobile} smUp={true} />
                     <ImageContainer isRelative name="" src={gallery.second.tablet} smDown={true} mdUp={true} />
                     <ImageContainer isRelative name="" src={gallery.second.desktop} mdDown={true} />
                 </li>
-                <li className="h-[300px] relative rounded-lg">
+                <li className={classNames(styles.gallery__third, "h-[300px] sm:h-auto relative rounded-lg")}>
                     <ImageContainer isRelative name="" src={gallery.third.mobile} smUp={true} />
                     <ImageContainer isRelative name="" src={gallery.third.tablet} smDown={true} mdUp={true} />
                     <ImageContainer isRelative name="" src={gallery.third.desktop} mdDown={true} />

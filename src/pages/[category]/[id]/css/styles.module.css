@@ -1,0 +1,29 @@
+
+@media screen and (min-width:600px){
+    .gallery {
+        grid-template-columns: 40% 58%;
+        grid-template-rows: 180px 180px;
+        grid-row-gap: 1rem;
+    }
+
+    .gallery__first {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+    }
+
+    .gallery__second {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+    }
+
+    .gallery__third {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 2;
+    }
+}
+
+@media screen and (min-width:900px){
+    .gallery {
+        grid-template-rows: 240px 240px;
+    }
+}
