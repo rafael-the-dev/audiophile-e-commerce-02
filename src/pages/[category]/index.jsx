@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material'
-import data from '../../../public/data.json'
-import ProductCard from '../../components/ProductCard'
-import CategoriesPreview from '../../components/CategoriesPreview'
+import data from '/public/data.json'
+import ProductCard from 'src/components/ProductCard'
+import CategoriesPreview from 'src/components/CategoriesPreview'
 
 export const getStaticPaths = async (context) => {
     return {

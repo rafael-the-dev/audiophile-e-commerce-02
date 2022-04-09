@@ -5,7 +5,7 @@ import Paragraph from '../Paragraph'
 import LinkButton from '../Link'
 import styles from './styles.module.css'
 
-export const Container = ({ description, isCategory, image, name }) => {
+export const Container = ({ category, description, isCategory, image, name, slug }) => {
     //const classes = useStyles();
 
     const ImageContainer = ({ imageName }) => (
@@ -40,7 +40,7 @@ export const Container = ({ description, isCategory, image, name }) => {
                 <Paragraph>
                     { description }
                 </Paragraph>
-                { isCategory && <LinkButton className="mt-6" label="See product" href="/" /> }
+                { isCategory && <LinkButton className="mt-6" label="See product" href={`/${category}/${slug}`} /> }
             </div>
         </article>
     );
