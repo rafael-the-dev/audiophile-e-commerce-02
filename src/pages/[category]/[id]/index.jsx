@@ -50,13 +50,13 @@ const Container = ({ product }) => {
                     </a>
                 </Link>
             </div>
-            <section className="px-[5%] pb-12">
+            <section className="px-[5%] pb-12 sm:pb-8">
                 <Typography
                     className="font-bold mb-8 uppercase text-center text-2xl"
                     component="h2">
                     You may also like
                 </Typography>
-                <div className="md:flex items-stretch justify-between">
+                <div className="sm:flex items-stretch justify-between">
                     {
                         othersProducts
                     }

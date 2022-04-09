@@ -19,7 +19,7 @@ const Container = ({ image, name, slug }) => {
     const getImageURL = (name) => `/images/${name}`;
 
     return (
-        <article className="flex flex-col items-center mb-12 md:w-[31.33333%]">
+        <article className="flex flex-col items-center mb-12 sm:w-[31.33333%]">
             <div className={classNames(styles.imageContainer, "frounded-lg w-full")}>
                 <ImageContainer src={getImageURL(image.mobile)} smUp={true} />
                 <ImageContainer src={getImageURL(image.tablet)} smDown={true} mdUp={true} />
