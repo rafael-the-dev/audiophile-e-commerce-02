@@ -56,7 +56,7 @@ const Container = ({ product }) => {
                     component="h2">
                     You may also like
                 </Typography>
-                <div>
+                <div className="md:flex items-stretch justify-between">
                     {
                         othersProducts
                     }
