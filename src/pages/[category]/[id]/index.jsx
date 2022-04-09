@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import { Button, Typography } from '@mui/material'
 import CategoriesPreview from 'src/components/CategoriesPreview';
+import ImageContainer from 'src/components/ImageContainer'
 import data from "public/data.json"
 import { useMemo } from 'react'
 import Card from './components/Card'
+import classNames from 'classnames';
 
 export const getStaticPaths = async () => {
     const paths = data.reduce((prevValue, currentValue) => {
@@ -37,6 +39,8 @@ export const getStaticProps = async (context) => {
 const Container = ({ product }) => {
     if(!Boolean(product)) return <Typography className="text-3xl" component="h1">Loading...</Typography>;
 
+    const { gallery } = product;
+
     const othersProducts = useMemo(() => (
         product.others.map((other, index) => <Card key={index} { ...other }/>)
     ))
@@ -50,7 +54,24 @@ const Container = ({ product }) => {
                     </a>
                 </Link>
             </div>
-            <section className="px-[5%] pb-12 sm:pb-8">
+            <ul className={classNames("px-[5%]")}>
+                <li className="h-[180px] relative rounded-lg mb-4">
+                    <ImageContainer isRelative name="" src={gallery.first.mobile} smUp={true} />
+                    <ImageContainer isRelative name="" src={gallery.first.tablet} smDown={true} mdUp={true} />
+                    <ImageContainer isRelative name="" src={gallery.first.desktop} mdDown={true} />
+                </li>
+                <li className="h-[180px] relative rounded-lg mb-4">
+                    <ImageContainer isRelative name="" src={gallery.second.mobile} smUp={true} />
+                    <ImageContainer isRelative name="" src={gallery.second.tablet} smDown={true} mdUp={true} />
+                    <ImageContainer isRelative name="" src={gallery.second.desktop} mdDown={true} />
+                </li>
+                <li className="h-[300px] relative rounded-lg">
+                    <ImageContainer isRelative name="" src={gallery.third.mobile} smUp={true} />
+                    <ImageContainer isRelative name="" src={gallery.third.tablet} smDown={true} mdUp={true} />
+                    <ImageContainer isRelative name="" src={gallery.third.desktop} mdDown={true} />
+                </li>
+            </ul>
+            <section className="px-[5%] mt-20 pb-12 sm:pb-8">
                 <Typography
                     className="font-bold mb-8 uppercase text-center text-2xl"
                     component="h2">
