@@ -8,6 +8,8 @@ import ImageContainer from 'src/components/ImageContainer'
 const Container = ({ image, name, slug }) => {
 
     const getImageURL = (name) => `/images/${name}`;
+    const tokens = slug.split("-");
+    const category = tokens[tokens.length - 1]
 
     return (
         <article className="flex flex-col items-center mb-12 sm:w-[31.33333%]">
@@ -23,7 +25,7 @@ const Container = ({ image, name, slug }) => {
             </Typography>
             <Link 
                 className="mt-6"
-                href="/"
+                href={`/${category}/${slug}`}
                 label="See product"
             />
         </article>
