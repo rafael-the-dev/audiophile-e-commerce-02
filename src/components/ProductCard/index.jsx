@@ -5,7 +5,7 @@ import Paragraph from '../Paragraph'
 import LinkButton from '../Link'
 import styles from './styles.module.css'
 
-export const Container = ({ category, description, isCategory, image, name, slug }) => {
+export const Container = ({ category, description, isCategory, image, name, price, slug }) => {
     //const classes = useStyles();
 
     const ImageContainer = ({ imageName }) => (
@@ -42,6 +42,15 @@ export const Container = ({ category, description, isCategory, image, name, slug
                 </Paragraph>
                 { isCategory && <LinkButton className="mt-6" label="See product" href={`/${category}/${slug}`} /> }
             </div>
+            { !isCategory && (
+                <>
+                    <Typography
+                        className={classNames(`font-semibold mt-4 text-left text-xl w-full`)}
+                        component="h3">
+                        ${ price }
+                    </Typography>
+                </>
+            )}
         </article>
     );
 };
