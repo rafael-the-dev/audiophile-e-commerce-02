@@ -9,8 +9,9 @@ import createEmotionCache from '../material-ui/createEmotionCache';
 import { Provider } from 'react-redux';
 import { store } from '../redux/store';
 import Layout from '../components/layout';
-import '../styles/reset.css'
-import '../styles/tailwind.css'
+import 'src/styles/reset.css'
+import 'src/styles/globals.css'
+import 'src/styles/tailwind.css'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();

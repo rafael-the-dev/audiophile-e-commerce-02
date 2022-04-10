@@ -7,8 +7,9 @@ import styles from './styles.module.css'
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 
-export const Container = ({ category, description, isCategory, image, name, price, slug }) => {
+export const Container = ({ category, description, isCategory, image, isNew, name, price, slug }) => {
     //const classes = useStyles();
+    console.log(isNew)
 
     const ImageContainer = ({ imageName }) => (
         <Image 
@@ -35,7 +36,8 @@ export const Container = ({ category, description, isCategory, image, name, pric
             <div className={classNames("flex flex-col pt-8 md:items-start md:text-left md:max-w-[50%]", 
                 { 'items-center text-center sm:max-w-[70%]': isCategory })}>
                 <Typography
-                    className={classNames(`font-semibold text-2xl`)}
+                    className={classNames(`font-semibold text-2xl`, { "bofore:mx-auto": isNew && isCategory },
+                    { "new-product": isNew })}
                     component="h2">
                     { name }
                 </Typography>

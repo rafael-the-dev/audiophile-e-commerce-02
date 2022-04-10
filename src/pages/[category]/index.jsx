@@ -40,7 +40,7 @@ const Container = ({ category, products }) => {
             <section className='px-[5%] pt-12 pb-8 md:pt-20 md:pb-4'>
                 {
                     products.map((product, index) => (
-                        <ProductCard key={index} isCategory={true} { ...product } />
+                        <ProductCard key={index} isCategory={true} { ...product }  isNew={product.new} />
                     ))
                 }
             </section>

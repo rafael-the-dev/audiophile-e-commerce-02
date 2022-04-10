@@ -57,7 +57,7 @@ const Container = ({ product }) => {
                 </Link>
             </div>
             <section className={classNames(`px-[5%]`)}>
-                <ProductCard { ...product } />
+                <ProductCard { ...product } isNew={product.new} />
             </section>
             <ul className={classNames(styles.gallery, "px-[5%] sm:grid justify-between")}>
                 <li className={classNames(styles.gallery__first, "h-[180px] sm:h-auto relative rounded-lg mb-4 sm:mb-0")}>
