@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Button, Typography } from '@mui/material'
 import CategoriesPreview from 'src/components/CategoriesPreview';
 import ImageContainer from 'src/components/ImageContainer'
+import ProductCard from 'src/components/ProductCard'
 import data from "public/data.json"
 import { useMemo } from 'react'
 import Card from './components/Card'
@@ -55,6 +56,9 @@ const Container = ({ product }) => {
                     </a>
                 </Link>
             </div>
+            <section className={classNames(`px-[5%]`)}>
+                <ProductCard { ...product } />
+            </section>
             <ul className={classNames(styles.gallery, "px-[5%] sm:grid justify-between")}>
                 <li className={classNames(styles.gallery__first, "h-[180px] sm:h-auto relative rounded-lg mb-4 sm:mb-0")}>
                     <ImageContainer isRelative name="" src={gallery.first.mobile} smUp={true} />
