@@ -37,7 +37,7 @@ export const Container = ({ category, description, isCategory, image, isNew, nam
                 { 'items-center text-center sm:max-w-[70%]': isCategory })}>
                 <Typography
                     className={classNames(`font-semibold text-2xl`, { "bofore:mx-auto": isNew && isCategory },
-                    { "new-product": isNew })}
+                    { "new-product before:text-brown-500": isNew })}
                     component="h2">
                     { name }
                 </Typography>
