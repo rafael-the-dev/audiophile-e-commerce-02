@@ -60,10 +60,10 @@ const Container = ({ product }) => {
             <section className={classNames(`px-[5%]`)}>
                 <ProductCard { ...product } isNew={product.new} />
             </section>
-            <section className="px-[5%]">
-                <div>
+            <section className="px-[5%] md:flex">
+                <div className='md:max-w-[50%]'>
                     <Typography
-                        className="font-bold mb-8 uppercase md:text-center text-2xl"
+                        className="font-bold mb-8 uppercase text-2xl"
                         component="h2">
                         Features
                     </Typography>
@@ -71,13 +71,13 @@ const Container = ({ product }) => {
                         { features }
                     </Paragraph>
                 </div>
-                <div className="mt-12">
+                <div className="mt-12 justify-between sm:flex md:mt-0 md:flex-col md:ml-16 md:max-w-[40%]">
                     <Typography
                         className="font-bold uppercase md:text-center text-2xl"
                         component="h2">
                         In the box
                     </Typography>
-                    <ul className="mt-8">
+                    <ul className="mt-8 sm:grow sm:mt-0 sm:ml-[25%] md:ml-20 md:mt-6">
                         {
                             includes.map((listItem, index) => (
                                 <Typography 
