@@ -3,6 +3,7 @@ import { Button, Typography } from '@mui/material'
 import CategoriesPreview from 'src/components/CategoriesPreview';
 import ImageContainer from 'src/components/ImageContainer'
 import ProductCard from 'src/components/ProductCard'
+import Paragraph from 'src/components/Paragraph'
 import data from "public/data.json"
 import { useMemo } from 'react'
 import Card from './components/Card'
@@ -41,7 +42,7 @@ export const getStaticProps = async (context) => {
 const Container = ({ product }) => {
     if(!Boolean(product)) return <Typography className="text-3xl" component="h1">Loading...</Typography>;
 
-    const { gallery } = product;
+    const { features, gallery } = product;
 
     const othersProducts = useMemo(() => (
         product.others.map((other, index) => <Card key={index} { ...other }/>)
@@ -58,6 +59,18 @@ const Container = ({ product }) => {
             </div>
             <section className={classNames(`px-[5%]`)}>
                 <ProductCard { ...product } isNew={product.new} />
+            </section>
+            <section className="px-[5%]">
+                <div>
+                    <Typography
+                        className="font-bold mb-8 uppercase md:text-center text-2xl"
+                        component="h2">
+                        Features
+                    </Typography>
+                    <Paragraph className="">
+                        { features }
+                    </Paragraph>
+                </div>
             </section>
             <ul className={classNames(styles.gallery, "px-[5%] sm:grid justify-between")}>
                 <li className={classNames(styles.gallery__first, "h-[180px] sm:h-auto relative rounded-lg mb-4 sm:mb-0")}>
