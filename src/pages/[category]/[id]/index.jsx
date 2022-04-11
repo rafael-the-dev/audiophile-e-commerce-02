@@ -42,7 +42,7 @@ export const getStaticProps = async (context) => {
 const Container = ({ product }) => {
     if(!Boolean(product)) return <Typography className="text-3xl" component="h1">Loading...</Typography>;
 
-    const { features, gallery } = product;
+    const { features, gallery, includes } = product;
 
     const othersProducts = useMemo(() => (
         product.others.map((other, index) => <Card key={index} { ...other }/>)
@@ -71,8 +71,28 @@ const Container = ({ product }) => {
                         { features }
                     </Paragraph>
                 </div>
+                <div className="mt-12">
+                    <Typography
+                        className="font-bold uppercase md:text-center text-2xl"
+                        component="h2">
+                        In the box
+                    </Typography>
+                    <ul className="mt-8">
+                        {
+                            includes.map((listItem, index) => (
+                                <Typography 
+                                    component="li" 
+                                    key={index} 
+                                    className="flex items-center mb-2 text-lg">
+                                    <span className="font-semibold text-brown-500">{ listItem.quantity }x</span>
+                                    <span className="ml-4 opacity-90">{ listItem.item }</span>
+                                </Typography>
+                            ))
+                        }
+                    </ul>
+                </div>
             </section>
-            <ul className={classNames(styles.gallery, "px-[5%] sm:grid justify-between")}>
+            <ul className={classNames(styles.gallery, "mt-20 px-[5%] sm:grid justify-between")}>
                 <li className={classNames(styles.gallery__first, "h-[180px] sm:h-auto relative rounded-lg mb-4 sm:mb-0")}>
                     <ImageContainer isRelative name="" src={gallery.first.mobile} smUp={true} />
                     <ImageContainer isRelative name="" src={gallery.first.tablet} smDown={true} mdUp={true} />
