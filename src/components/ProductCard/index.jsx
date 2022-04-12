@@ -6,7 +6,7 @@ import LinkButton from '../Link'
 import styles from './styles.module.css'
 import AddContainer from './components/AddContainer'
 
-export const Container = ({ category, description, isCategory, image, isNew, name, price, slug }) => {
+export const Container = ({ category, description, isCategory, image, isNew, name, price, product , slug }) => {
     //const classes = useStyles();
 
     const ImageContainer = ({ imageName }) => (
@@ -50,7 +50,7 @@ export const Container = ({ category, description, isCategory, image, isNew, nam
                             component="h3">
                             ${ price }
                         </Typography>
-                        <AddContainer />
+                        <AddContainer product={product} />
                     </>
                 )}
             </div>

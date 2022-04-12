@@ -9,6 +9,7 @@ import React, { useCallback, useMemo, createElement } from 'react'
 import Card from './components/Card'
 import classNames from 'classnames';
 import styles from './css/styles.module.css'
+import { useDispatch } from 'react-redux';
 
 export const getStaticPaths = async () => {
     const paths = data.reduce((prevValue, currentValue) => {
@@ -43,6 +44,7 @@ const Container = ({ product }) => {
     if(!Boolean(product)) return <Typography className="text-3xl" component="h1">Loading...</Typography>;
 
     const { features, gallery, includes } = product;
+    const dispatch = useDispatch();
 
     const othersProducts = useMemo(() => (
         product.others.map((other, index) => <Card key={index} { ...other }/>)
@@ -58,7 +60,7 @@ const Container = ({ product }) => {
                 </Link>
             </div>
             <section className={classNames(`px-[5%]`)}>
-                <ProductCard { ...product } isNew={product.new} />
+                <ProductCard { ...product } isNew={product.new} product={product} />
             </section>
             <section className="px-[5%] md:flex">
                 <div className='md:max-w-[50%]'>
