@@ -9,10 +9,13 @@ import Link from 'next/link'
 import { useStyles } from './css/styles'
 import styles from './css/styles.module.css'
 import CloseIcon from '@mui/icons-material/Close';
+import { useSelector } from 'react-redux'
+import { getCartLenght } from 'src/redux/selectors';
 
 const Header = () => {
     const classes = useStyles();
     const [ openDrawer, setOpenDrawer ] = useState(false);
+    const cartLength = useSelector(getCartLenght);
 
     const menu = useMemo(() => (
         <IconButton 
@@ -64,7 +67,7 @@ const Header = () => {
                 { navigation }
             </Hidden>
             <IconButton className="pr-0">
-                <Badge badgeContent={2} color="primary" classes={{ badge: "bg-brown-500" }} >
+                <Badge badgeContent={cartLength} classes={{ badge: "bg-brown-500 text-slate-100" }} showZero >
                     <ShoppingCartOutlinedIcon  className="text-slate-50" />
                 </Badge>
             </IconButton>
