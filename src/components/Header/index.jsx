@@ -1,6 +1,6 @@
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Drawer, Hidden, IconButton } from '@mui/material'
+import { Badge, Drawer, Hidden, IconButton } from '@mui/material'
 import classNames from 'classnames'
 import logo from 'public/images/shared/desktop/logo.svg'
 import Image from 'next/image'
@@ -64,7 +64,9 @@ const Header = () => {
                 { navigation }
             </Hidden>
             <IconButton className="pr-0">
-                <ShoppingCartOutlinedIcon  className="text-slate-50" />
+                <Badge badgeContent={2} color="primary" classes={{ badge: "bg-brown-500" }} >
+                    <ShoppingCartOutlinedIcon  className="text-slate-50" />
+                </Badge>
             </IconButton>
             <Hidden mdUp>
                 <Drawer
