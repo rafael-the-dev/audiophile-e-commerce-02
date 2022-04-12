@@ -2,20 +2,31 @@ import { Button, IconButton, Typography} from '@mui/material'
 import classNames from 'classnames'
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { useCallback, useState } from 'react';
 
 const Container = () => {
+    const [ counter, setCounter ] = useState(0);
+    const decrement = useCallback(() => setCounter(oldValue => {
+        const value = oldValue - 1;
+        if(value < 0) {
+            return oldValue;
+        }
+        return value;
+    }), []);
+    const increment = useCallback(() => setCounter(oldValue => oldValue += 1), []);
+
     return (
         <div className="flex items-stretch mt-6">
             <div className="bg-gray-300 flex items-center px-3 py-2">
-                <IconButton>
+                <IconButton onClick={increment}>
                     <AddIcon className="text-base" />
                 </IconButton>
                 <Typography
                     className={classNames(`font-semibold text-xl mx-6`)}
                     component="p">
-                    1
+                    { counter }
                 </Typography>
-                <IconButton>
+                <IconButton onClick={decrement}>
                     <RemoveIcon className="text-base" />
                 </IconButton>
             </div>
