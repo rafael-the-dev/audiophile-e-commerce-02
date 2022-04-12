@@ -9,7 +9,6 @@ import RemoveIcon from '@mui/icons-material/Remove';
 
 export const Container = ({ category, description, isCategory, image, isNew, name, price, slug }) => {
     //const classes = useStyles();
-    console.log(isNew)
 
     const ImageContainer = ({ imageName }) => (
         <Image 

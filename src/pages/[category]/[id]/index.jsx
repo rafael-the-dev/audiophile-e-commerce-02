@@ -5,7 +5,7 @@ import ImageContainer from 'src/components/ImageContainer'
 import ProductCard from 'src/components/ProductCard'
 import Paragraph from 'src/components/Paragraph'
 import data from "public/data.json"
-import { useMemo } from 'react'
+import React, { useCallback, useMemo, createElement } from 'react'
 import Card from './components/Card'
 import classNames from 'classnames';
 import styles from './css/styles.module.css'
@@ -46,7 +46,7 @@ const Container = ({ product }) => {
 
     const othersProducts = useMemo(() => (
         product.others.map((other, index) => <Card key={index} { ...other }/>)
-    ))
+    ));
 
     return (
         <>
@@ -67,9 +67,7 @@ const Container = ({ product }) => {
                         component="h2">
                         Features
                     </Typography>
-                    <Paragraph className="">
-                        { features }
-                    </Paragraph>
+                    <Paragraph className="" dangerouslySetInnerHTML={ features } />
                 </div>
                 <div className="mt-12 justify-between sm:flex md:mt-0 md:flex-col md:ml-16 md:max-w-[40%]">
                     <Typography
