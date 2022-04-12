@@ -1,11 +1,10 @@
 import Image from 'next/image'
-import { Button, Hidden, IconButton, Typography } from '@mui/material'
+import { Hidden, Typography } from '@mui/material'
 import classNames from 'classnames'
 import Paragraph from '../Paragraph'
 import LinkButton from '../Link'
 import styles from './styles.module.css'
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
+import AddContainer from './components/AddContainer'
 
 export const Container = ({ category, description, isCategory, image, isNew, name, price, slug }) => {
     //const classes = useStyles();
@@ -51,24 +50,7 @@ export const Container = ({ category, description, isCategory, image, isNew, nam
                             component="h3">
                             ${ price }
                         </Typography>
-                        <div className="flex items-stretch mt-6">
-                            <div className="bg-gray-300 flex items-center px-3 py-2">
-                                <IconButton>
-                                    <AddIcon className="text-base" />
-                                </IconButton>
-                                <Typography
-                                    className={classNames(`font-semibold text-xl mx-6`)}
-                                    component="p">
-                                    1
-                                </Typography>
-                                <IconButton>
-                                    <RemoveIcon className="text-base" />
-                                </IconButton>
-                            </div>
-                            <Button className="bg-brown-500 ml-4 text-slate-100 px-4 hover:bg-brown-400">
-                                Add to cart
-                            </Button>
-                        </div>
+                        <AddContainer />
                     </>
                 )}
             </div>
