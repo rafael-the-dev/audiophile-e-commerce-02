@@ -1,6 +1,14 @@
+import { addCardItems } from "../actions";
 import { initialState } from "../state";
 
 
 export const reducer = (state=initialState, action) => {
-    return state;
+    switch(action.type) {
+        case addCardItems().type: {
+            return { ...state, cart: action.payload }
+        }
+        default: return state;
+    }
 }
+
+/** */
