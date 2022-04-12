@@ -28,7 +28,9 @@ const Header = () => {
     const listItem = useCallback(([ label, href, index ]) => (
         <li className={classNames('mb-4 last:mb-0 md:mb-0 md:mr-3 md:last:mr-0')} key={index}>
             <Link href={href}>
-                <a className={classNames('no-underline text-slate-50 uppercase hover:text-brown-500')}>
+                <a 
+                    className={classNames('no-underline text-slate-50 uppercase hover:text-brown-500')}
+                    onClick={() => setOpenDrawer(false)}>
                     { label }
                 </a>
             </Link>
