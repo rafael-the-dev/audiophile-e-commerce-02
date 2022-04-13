@@ -4,9 +4,11 @@ import { Button, Dialog, Typography } from '@mui/material';
 import styles from './css/styles.module.css';
 import classNames from 'classnames'
 import CheckoutLink from 'src/components/Link'
+import { getTotalCartAmout } from '../../../../redux/selectors';
 
 const Container = ({ handleCloseDialog, openDialog }) => {
     const cartLength = useSelector(getCartLenght);
+    const totalAmout = useSelector(getTotalCartAmout)
 
     return (
         <Dialog 
@@ -26,7 +28,7 @@ const Container = ({ handleCloseDialog, openDialog }) => {
                     className="flex items-center justify-between text-2xl"
                     component="h3">
                     <span className="text-xl">Total</span>
-                    <span className="font-bold">$0</span>
+                    <span className="font-bold">${ totalAmout }</span>
                 </Typography>
                 <CheckoutLink 
                     buttonClassName="w-full"

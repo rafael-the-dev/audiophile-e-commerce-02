@@ -10,8 +10,9 @@ const addCartItemFunc = ({ action, state}) => {
 
     if(hasNewItem) {
         list[itemIndex].quantity += quantity;
+        list[itemIndex].total += item.price * quantity;
     } else {
-        list.push({ item: item, quantity: 1})
+        list.push({ item: item, quantity, total: item.price * quantity })
     }
 
     return { ...state, cart: list };
