@@ -29,6 +29,7 @@ const Container = ({ handleCloseDialog, openDialog }) => {
                 </Typography>
                 <Button 
                     className="normal-case opacity-90 p-0 text-black underline"
+                    disabled={Boolean(cartLength)}
                     onClick={removeCartItemsHandler}>
                     Remove all
                     </Button>
@@ -43,6 +44,8 @@ const Container = ({ handleCloseDialog, openDialog }) => {
                 <CheckoutLink 
                     buttonClassName="w-full"
                     className="mt-6" 
+                    clickHandler={handleCloseDialog}
+                    disabled={Boolean(cartLength)}
                     href="/"
                     label="checkout" 
                 />
