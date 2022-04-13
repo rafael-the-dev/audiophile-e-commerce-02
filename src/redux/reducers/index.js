@@ -1,4 +1,4 @@
-import { addCardItems, addCartItem } from "../actions";
+import { addCartItem, addCartItems, removeAllCartItems } from "../actions";
 import { initialState } from "../state";
 
 
@@ -21,11 +21,14 @@ const addCartItemFunc = ({ action, state}) => {
 
 export const reducer = (state=initialState, action) => {
     switch(action.type) {
-        case addCardItems().type: {
+        case addCartItems().type: {
             return { ...state, cart: action.payload }
         }
         case addCartItem().type: {
             return addCartItemFunc({ action, state });
+        }
+        case removeAllCartItems().type: {
+            return { ...state, cart: [] }
         }
         default: return state;
     }
