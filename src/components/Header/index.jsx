@@ -11,6 +11,7 @@ import styles from './css/styles.module.css'
 import CloseIcon from '@mui/icons-material/Close';
 import { useSelector } from 'react-redux'
 import { getCartLenght } from 'src/redux/selectors';
+import ShoppingCartBadge from './components/ShoppingCart'
 
 const Header = () => {
     const classes = useStyles();
@@ -68,11 +69,7 @@ const Header = () => {
             <Hidden mdDown>
                 { navigation }
             </Hidden>
-            <IconButton className="pr-0">
-                <Badge badgeContent={cartLength} classes={{ badge: "bg-brown-500 text-slate-100" }} showZero >
-                    <ShoppingCartOutlinedIcon  className="text-slate-50" />
-                </Badge>
-            </IconButton>
+            <ShoppingCartBadge />
             <Hidden mdUp>
                 <Drawer
                     anchor="top"
