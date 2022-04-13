@@ -3,6 +3,7 @@ import { getCartLenght } from 'src/redux/selectors';
 import { Button, Dialog, Typography } from '@mui/material';
 import styles from './css/styles.module.css';
 import classNames from 'classnames'
+import CheckoutLink from 'src/components/Link'
 
 const Container = ({ handleCloseDialog, openDialog }) => {
     const cartLength = useSelector(getCartLenght);
@@ -20,6 +21,20 @@ const Container = ({ handleCloseDialog, openDialog }) => {
                 </Typography>
                 <Button className="normal-case opacity-90 p-0 text-black underline">Remove all</Button>
             </header>
+            <footer className="flex flex-col items-stretch mt-8">
+                <Typography
+                    className="flex items-center justify-between text-2xl"
+                    component="h3">
+                    <span className="text-xl">Total</span>
+                    <span className="font-bold">$0</span>
+                </Typography>
+                <CheckoutLink 
+                    buttonClassName="w-full"
+                    className="mt-6" 
+                    href="/"
+                    label="checkout" 
+                />
+            </footer>
         </Dialog>
     );
 };
