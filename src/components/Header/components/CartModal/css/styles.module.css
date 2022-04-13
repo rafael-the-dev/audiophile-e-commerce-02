@@ -1,0 +1,10 @@
+
+.dialogContainer {
+    align-items: flex-start;
+    padding-top: 96px;
+}
+
+.dialogPaper {
+    margin: 0 5%;
+    width: 90%;
+}
