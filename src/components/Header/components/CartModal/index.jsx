@@ -31,7 +31,7 @@ const Container = ({ handleCloseDialog, openDialog }) => {
                 </Typography>
                 <Button 
                     className="normal-case opacity-90 p-0 text-black underline"
-                    disabled={Boolean(cartLength)}
+                    disabled={!Boolean(cartLength)}
                     onClick={removeCartItemsHandler}>
                     Remove all
                     </Button>
@@ -43,7 +43,7 @@ const Container = ({ handleCloseDialog, openDialog }) => {
                     ))
                 }
             </div>
-            <footer className="flex flex-col items-stretch mt-8">
+            <footer className="flex flex-col items-stretch mt-6">
                 <Typography
                     className="flex items-center justify-between text-2xl"
                     component="h3">
@@ -54,7 +54,7 @@ const Container = ({ handleCloseDialog, openDialog }) => {
                     buttonClassName="w-full"
                     className="mt-6" 
                     clickHandler={handleCloseDialog}
-                    disabled={Boolean(cartLength)}
+                    disabled={!Boolean(cartLength)}
                     href="/"
                     label="checkout" 
                 />
