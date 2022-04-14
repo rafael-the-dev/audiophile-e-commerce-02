@@ -4,13 +4,15 @@ import { Button, Dialog, Typography } from '@mui/material';
 import styles from './css/styles.module.css';
 import classNames from 'classnames'
 import CheckoutLink from 'src/components/Link'
-import { getTotalCartAmout } from '../../../../redux/selectors';
+import { getAllCartItems, getTotalCartAmout } from 'src/redux/selectors';
 import { useCallback } from 'react';
-import { removeAllCartItems } from '../../../../redux/actions';
+import { removeAllCartItems } from 'src/redux/actions';
+import CheckoutItem from '../CheckoutItem'
 
 const Container = ({ handleCloseDialog, openDialog }) => {
     const cartLength = useSelector(getCartLenght);
     const totalAmout = useSelector(getTotalCartAmout)
+    const cartItems = useSelector(getAllCartItems)
 
     const dispatch = useDispatch()
 
@@ -34,6 +36,13 @@ const Container = ({ handleCloseDialog, openDialog }) => {
                     Remove all
                     </Button>
             </header>
+            <div className="mt-6">
+                {
+                    cartItems.map((item, index) => (
+                        <CheckoutItem { ...item } key={index} />
+                    ))
+                }
+            </div>
             <footer className="flex flex-col items-stretch mt-8">
                 <Typography
                     className="flex items-center justify-between text-2xl"
