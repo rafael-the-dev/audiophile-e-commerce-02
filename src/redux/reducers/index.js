@@ -23,6 +23,10 @@ const editCartItemFunc = ({ action, state}) => {
     const { item, quantity } = action.payload;
     const list = [ ...state.cart ];
 
+    if(quantity === 0) {
+        return { ...state, cart: list.filter(listItem => listItem.item.id !== item.id) };
+    }
+
     const itemIndex = list.findIndex(listItem => listItem.item.id === item.id);
     const hasItem = itemIndex !== -1;
 
