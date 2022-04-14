@@ -1,4 +1,4 @@
-import { addCartItem, addCartItems, removeAllCartItems } from "../actions";
+import { addCartItem, addCartItems, editCartItem, removeAllCartItems } from "../actions";
 import { initialState } from "../state";
 
 
@@ -19,6 +19,23 @@ const addCartItemFunc = ({ action, state}) => {
 
 };
 
+const editCartItemFunc = ({ action, state}) => {
+    const { item, quantity } = action.payload;
+    const list = [ ...state.cart ];
+
+    const itemIndex = list.findIndex(listItem => listItem.item.id === item.id);
+    const hasItem = itemIndex !== -1;
+
+    if(hasItem) {
+        list[itemIndex].quantity = quantity;
+        list[itemIndex].total = item.price * quantity;
+    } else {
+        return state;
+    }
+
+    return { ...state, cart: list };
+};
+
 export const reducer = (state=initialState, action) => {
     switch(action.type) {
         case addCartItems().type: {
@@ -26,6 +43,9 @@ export const reducer = (state=initialState, action) => {
         }
         case addCartItem().type: {
             return addCartItemFunc({ action, state });
+        }
+        case editCartItem().type: {
+            return editCartItemFunc({ action, state });
         }
         case removeAllCartItems().type: {
             return { ...state, cart: [] }
