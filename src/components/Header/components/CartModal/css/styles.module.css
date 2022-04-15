@@ -18,6 +18,18 @@
 
     .dialogPaper {
         margin: 0;
-        width: 500px;
+        width: 450px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .dialogContainer {
+        padding-top: 100px;
+    }
+
+    .dialogPaper {
+        margin: 0;
+        padding-left: 2.5rem !important;
+        padding-right: 2.5rem !important;
     }
 }
