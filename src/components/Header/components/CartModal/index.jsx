@@ -38,7 +38,13 @@ const Container = ({ handleCloseDialog, openDialog }) => {
             </header>
             <div className="mt-6">
                 {
-                    cartItems.map((item, index) => (
+                    cartLength === 0 ? (
+                        <Typography
+                            className="font-bold uppercase text-3xl"
+                            component="h3">
+                            Cart is empty.
+                        </Typography>
+                    ) :cartItems.map((item, index) => (
                         <CheckoutItem { ...item } key={index} />
                     ))
                 }
