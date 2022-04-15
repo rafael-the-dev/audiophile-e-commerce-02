@@ -8,3 +8,13 @@
     margin: 0 5%;
     width: 90%;
 }
+
+@media screen and (min-width: 600px) {
+    .dialogContainer {
+        padding-top: 72px;
+    }
+
+    .dialogPaper {
+        width: 500px;
+    }
+}
