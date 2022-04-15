@@ -11,10 +11,13 @@
 
 @media screen and (min-width: 600px) {
     .dialogContainer {
+        justify-content: flex-end;
+        padding-right: 6%;
         padding-top: 72px;
     }
 
     .dialogPaper {
+        margin: 0;
         width: 500px;
     }
 }
