@@ -44,7 +44,7 @@ const Home = () => {
                     </Typography>
                     <LinkButton 
                         className="mt-6"
-                        href="/" 
+                        href="/headphones/xx99-mark-two-headphones" 
                         label="see product" 
                     />
                 </div>
@@ -78,7 +78,7 @@ const Home = () => {
                       <LinkButton 
                         buttonClassName={styles.speaker__Button}
                         className="mt-6"
-                        href="/"
+                        href="/speakers/zx9-speaker"
                         label="See product" 
                       />
                     </div>
@@ -95,7 +95,7 @@ const Home = () => {
                   <LinkButton 
                     buttonClassName={styles.zx7Speaker__Button}
                     className="mt-6"
-                    href="/"
+                    href="/speakers/zx7-speaker"
                     label="See product" 
                   />
               </div>
@@ -120,7 +120,7 @@ const Home = () => {
                   <LinkButton 
                     buttonClassName={styles.zx7Speaker__Button}
                     className="mt-6"
-                    href="/"
+                    href="/earphones/yx1-earphones"
                     label="See product" 
                   />
               </div>

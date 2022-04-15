@@ -61,10 +61,14 @@ const Header = () => {
                 <Hidden smDown mdUp>
                     { menu }
                 </Hidden>
-                <Image 
-                    alt="logo"
-                    src={logo}
-                />
+                <Link href="/">
+                    <a>
+                        <Image 
+                            alt="logo"
+                            src={logo}
+                        />
+                    </a>
+                </Link>
             </div>
             <Hidden mdDown>
                 { navigation }

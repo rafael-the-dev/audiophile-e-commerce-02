@@ -47,10 +47,14 @@ const Footer = () => {
         <footer className={classNames(`bg-black flex flex-col items-center px-[5%] py-16 sm:items-start 
             md:items-stretch`)}>
             <div className='justify-between items-center md:flex'>
-                <Image 
-                    alt='logo'
-                    src={logo}
-                />
+                <Link href="/">
+                    <a>
+                        <Image 
+                            alt='logo'
+                            src={logo}
+                        />
+                    </a>
+                </Link>
                 { navigation }
             </div>
             <div className="mt-8 md:flex md:justify-between md:items-end md:w-full">
