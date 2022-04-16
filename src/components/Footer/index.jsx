@@ -7,6 +7,7 @@ import { useCallback, useMemo } from 'react'
 import { Hidden, Typography } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
+import ScrollButton from './components/ScrollButton'
 
 const Footer = () => {
     const socialMedia = useMemo(() => (
@@ -45,7 +46,7 @@ const Footer = () => {
 
     return (
         <footer className={classNames(`bg-black flex flex-col items-center px-[5%] py-16 sm:items-start 
-            md:items-stretch`)}>
+            md:items-stretch relative`)}>
             <div className='justify-between items-center md:flex'>
                 <Link href="/">
                     <a>
@@ -78,6 +79,7 @@ const Footer = () => {
                     { socialMedia }
                 </Hidden>
             </div>
+            <ScrollButton />
         </footer>
     );
 };
