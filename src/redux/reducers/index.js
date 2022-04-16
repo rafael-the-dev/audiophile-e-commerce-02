@@ -43,7 +43,7 @@ const editCartItemFunc = ({ action, state}) => {
 export const reducer = (state=initialState, action) => {
     switch(action.type) {
         case addCartItems().type: {
-            return { ...state, cart: action.payload }
+            return { ...state, cart: action.payload.cart }
         }
         case addCartItem().type: {
             return addCartItemFunc({ action, state });
