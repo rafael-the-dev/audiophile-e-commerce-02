@@ -9,6 +9,7 @@ import createEmotionCache from '../material-ui/createEmotionCache';
 import { Provider } from 'react-redux';
 import { store } from '../redux/store';
 import Layout from '../components/layout';
+import { ReduxContextProvider } from 'src/context/ReduxContext';
 import 'src/styles/reset.css'
 import 'src/styles/globals.css'
 import 'src/styles/tailwind.css'
@@ -29,9 +30,11 @@ function MyApp(props) {
                     <ThemeProvider theme={theme}>
                         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                         <CssBaseline />
-                        <Layout>
-                            <Component {...pageProps} />
-                        </Layout>
+                        <ReduxContextProvider>
+                            <Layout>
+                                <Component {...pageProps} />
+                            </Layout>
+                        </ReduxContextProvider>
                     </ThemeProvider>
                 </CacheProvider>
             </Provider>
