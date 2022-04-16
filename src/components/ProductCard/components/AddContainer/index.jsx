@@ -45,6 +45,7 @@ const Container = ({ product }) => {
             </div>
             <Button 
                 className="bg-brown-500 ml-4 text-slate-100 px-4 hover:bg-brown-400"
+                disabled={!Boolean(counter)}
                 onClick={addItemToCart}>
                 Add to cart
             </Button>
