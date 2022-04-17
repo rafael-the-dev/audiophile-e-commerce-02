@@ -2,6 +2,7 @@ import { Grid, Paper, Typography } from '@mui/material'
 import { useSelector } from 'react-redux'
 import { getAllCartItems } from "src/redux/selectors"
 import CheckoutItem from "src/components/CheckoutItem"
+import PayLink from "src/components/Link"
 
 const Container = () => {
     const cart = useSelector(getAllCartItems)
@@ -23,6 +24,9 @@ const Container = () => {
                                 <CheckoutItem { ...cartItem } isCheckoutRoute key={index} />
                             ))
                         }
+                    </div>
+                    <div className="flex flex-col items-stretch pt-6">
+                        <PayLink buttonClassName="w-full" href="/" label="Continue &amp; Pay" />
                     </div>
                 </Paper>
             </Grid>
