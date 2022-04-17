@@ -7,7 +7,7 @@ import CheckoutLink from 'src/components/Link'
 import { getAllCartItems, getTotalCartAmout } from 'src/redux/selectors';
 import { useCallback } from 'react';
 import { removeAllCartItems } from 'src/redux/actions';
-import CheckoutItem from '../CheckoutItem'
+import CheckoutItem from 'src/components/CheckoutItem'
 
 const Container = ({ handleCloseDialog, openDialog }) => {
     const cartLength = useSelector(getCartLenght);
