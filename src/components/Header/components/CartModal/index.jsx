@@ -61,7 +61,7 @@ const Container = ({ handleCloseDialog, openDialog }) => {
                     className="mt-6" 
                     clickHandler={handleCloseDialog}
                     disabled={!Boolean(cartLength)}
-                    href="/"
+                    href="/checkout"
                     label="checkout" 
                 />
             </footer>

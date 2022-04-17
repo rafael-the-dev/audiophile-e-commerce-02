@@ -1,14 +1,18 @@
 import Header from '../Header'
 import Footer from '../Footer'
 import BestGear from '../BestGear';
+import { useRouter } from 'next/router'
 
 const Layout = ({ children }) => {
+    const { pathname } = useRouter();
+    console.log(pathname)
+
     return (
         <>
             <Header />
             <main>
                 {children}
-                <BestGear />
+                { pathname !== "/checkout" && <BestGear /> }
             </main>
             <Footer />
         </>
