@@ -4,6 +4,7 @@ import { getAllCartItems, getTotalCartAmout } from "src/redux/selectors"
 import CheckoutItem from "src/components/CheckoutItem"
 import PayLink from "src/components/Link"
 import classNames from 'classnames'
+import styles from "./css/styles.module.css"
 
 const Container = () => {
     const cart = useSelector(getAllCartItems);
@@ -16,11 +17,11 @@ const Container = () => {
         </Typography>
     );
     return(
-        <Grid container className="px-[5%]">
+        <Grid container className={classNames("px-[5%] pb-20 pt-12", styles.container)}>
             <Grid item xs={12}></Grid>
             <Grid item xs={12}>
                 <Paper 
-                    className="px-[5%] py-4 rounded-lg"
+                    className="px-[5%] pb-8 pt-6 rounded-lg"
                     elevation={0}>
                     <Typography
                         className="font-bold uppercase text-2xl"
