@@ -5,6 +5,7 @@ import CheckoutItem from "src/components/CheckoutItem"
 import PayLink from "src/components/Link"
 import classNames from 'classnames'
 import styles from "./css/styles.module.css"
+import TextField from './components/TextField'
 
 const Container = () => {
     const cart = useSelector(getAllCartItems);
@@ -33,6 +34,17 @@ const Container = () => {
                             component="legend">
                             Billing details
                         </Typography>
+                        <div className="mt-4">
+                            <TextField
+                                label="Name"
+                                placeholder="Alexei Ward"
+                             />
+                             <TextField
+                                label="Email Address"
+                                placeholder="alexeiward@gmail.com"
+                                type="email"
+                             />
+                        </div>
                     </fieldset>
                 </Paper>
             </Grid>
