@@ -18,13 +18,30 @@ const Container = () => {
     );
     return(
         <Grid container className={classNames("px-[5%] pb-20 pt-12", styles.container)}>
-            <Grid item xs={12}></Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} md={7} >
                 <Paper 
                     className="px-[5%] pb-8 pt-6 rounded-lg"
                     elevation={0}>
                     <Typography
                         className="font-bold uppercase text-2xl"
+                        component="h2">
+                        Checkout
+                    </Typography>
+                    <fieldset className="mt-4">
+                        <Typography 
+                            className="text-brown-500 uppercase"
+                            component="legend">
+                            Billing details
+                        </Typography>
+                    </fieldset>
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={5} >
+                <Paper 
+                    className="px-[5%] pb-8 pt-6 rounded-lg mt-16"
+                    elevation={0}>
+                    <Typography
+                        className="font-bold uppercase text-xl"
                         component="h2">
                         Summary
                     </Typography>
