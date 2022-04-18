@@ -2,11 +2,11 @@ import { Grid, FormControl, FormControlLabel, FormLabel, Paper, Radio, RadioGrou
 import { useSelector } from 'react-redux'
 import { getAllCartItems, getTotalCartAmout } from "src/redux/selectors"
 import CheckoutItem from "src/components/CheckoutItem"
-import Paragraph from "src/components/Paragraph"
 import PayLink from "src/components/Link"
 import classNames from 'classnames'
 import styles from "./css/styles.module.css"
 import TextField from './components/TextField'
+import PaymentMethod from './components/PaymentMehod'
 
 const Container = () => {
     const cart = useSelector(getAllCartItems);
@@ -91,52 +91,7 @@ const Container = () => {
                             component="legend">
                             Payments details
                         </Typography>
-                        <FormControl className="mt-6 w-full justify-between sm:flex sm:flex-row">
-                            <FormLabel 
-                                className="capitalize font-semibold font-roboto text-[0.82rem] sm:w-[20%]"
-                                id="payment-method">
-                                Payment method
-                            </FormLabel>
-                            <RadioGroup
-                                aria-labelledby="payment-method"
-                                className="mt-4 w-full sm:mt-0 sm:w-[50%]"
-                                defaultValue="female"
-                                name="radio-buttons-group">
-                                <FormControlLabel 
-                                    className="border border-solid border-gray-300 py-1 rounded-md mx-0 mb-3"
-                                    value="female" 
-                                    control={<Radio classes={{ checked: "text-brown-500" }} />} 
-                                    label="e-Money" 
-                                />
-                                <FormControlLabel 
-                                    className="border border-solid border-gray-300 py-1 rounded-md mx-0"
-                                    value="male" 
-                                    control={<Radio classes={{ checked: "text-brown-500" }} />} 
-                                    label="Cash on Delivery" 
-                                />
-                            </RadioGroup>
-                        </FormControl>
-                        <div className="flex flex-col justify-between mt-6 sm:flex-row">
-                            <TextField
-                                className="sm:w-[48%]"
-                                label="e-Money number"
-                                placeholder="283154456"
-                                type="number"
-                            />
-                            <TextField
-                                className="sm:w-[48%]"
-                                label="e-Money PIN"
-                                placeholder="6891"
-                                type="password"
-                            />
-                        </div>
-                        <Paragraph className={classNames(`flex sm:items-center before:bg-no-repeat 
-                            sm:before:bg-center before:bg-contain`, 
-                            styles.cashOnDeliver)}>
-                            The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier 
-                            arrives at your residence. Just make sure your address is correct so that your 
-                            order will not be cancelled.
-                        </Paragraph>
+                        <PaymentMethod />
                     </fieldset>
                 </Paper>
             </Grid>

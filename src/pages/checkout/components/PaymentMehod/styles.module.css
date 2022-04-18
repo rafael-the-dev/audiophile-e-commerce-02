@@ -1,0 +1,15 @@
+
+.cashOnDeliver::before {
+    background-image: url(/images/shared/desktop/delivery.svg);
+    content: "" !important;
+    height: 111px;
+    margin-right: 1rem;
+    width: 166px;
+}
+
+@media screen and (min-width: 600px) {
+    .cashOnDeliver::before {
+        height: 50px;
+        width: 100px;
+    }
+}
