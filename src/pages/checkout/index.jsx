@@ -34,16 +34,56 @@ const Container = () => {
                             component="legend">
                             Billing details
                         </Typography>
-                        <div className="mt-4">
+                        <div className="mt-4 flex-wrap justify-between sm:flex">
                             <TextField
+                                className="sm:w-[48%]"
                                 label="Name"
                                 placeholder="Alexei Ward"
                              />
-                             <TextField
-                                label="Email Address"
+                            <TextField
+                                className="sm:w-[48%]"
+                                label="Email address"
                                 placeholder="alexeiward@gmail.com"
                                 type="email"
+                            />
+                            <TextField
+                                className="sm:mb-0 sm:w-[48%]"
+                                label="Phone number"
+                                placeholder="+1 202-555-0136"
+                                type="tel"
+                            />
+                        </div>
+                    </fieldset>
+                    <fieldset className="mt-8 sm:mt-12">
+                        <Typography 
+                            className="text-brown-500 uppercase"
+                            component="legend">
+                            Shipping info
+                        </Typography>
+                        <div className="mt-4 flex-wrap justify-between sm:flex">
+                            <TextField
+                                className="sm:w-full"
+                                label="Your address"
+                                placeholder="1137 Willians Avenue"
                              />
+                            <TextField
+                                className="sm:w-[48%]"
+                                label="Email address"
+                                placeholder="alexeiward@gmail.com"
+                                type="email"
+                            />
+                            <TextField
+                                className="sm:w-[48%]"
+                                label="Phone number"
+                                placeholder="+1 202-555-0136"
+                                type="tel"
+                            />
+                            <TextField
+                                className="sm:mb-0 sm:w-[48%]"
+                                label="Phone number"
+                                placeholder="+1 202-555-0136"
+                                type="tel"
+                            />
                         </div>
                     </fieldset>
                 </Paper>

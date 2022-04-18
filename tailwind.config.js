@@ -1,3 +1,4 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -17,6 +18,9 @@ module.exports = {
         zinc: {
           800: '#101010'
         }
+      },
+      fontFamily: {
+        roboto: ["Roboto", defaultTheme.fontFamily.sans ]
       }
     },
     screens: {
