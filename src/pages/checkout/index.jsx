@@ -1,4 +1,4 @@
-import { Grid, Paper, Typography } from '@mui/material'
+import { Grid, FormControl, FormControlLabel, FormLabel, Paper, Radio, RadioGroup, Typography } from '@mui/material'
 import { useSelector } from 'react-redux'
 import { getAllCartItems, getTotalCartAmout } from "src/redux/selectors"
 import CheckoutItem from "src/components/CheckoutItem"
@@ -18,8 +18,8 @@ const Container = () => {
         </Typography>
     );
     return(
-        <Grid container className={classNames("px-[5%] pb-20 pt-12", styles.container)}>
-            <Grid item xs={12} md={7} >
+        <Grid container className={classNames("px-[5%] pb-20 pt-12 md:justify-between", styles.container)}>
+            <Grid item xs={12} md={7} className="md:max-w-[57%]">
                 <Paper 
                     className="px-[5%] pb-8 pt-6 rounded-lg"
                     elevation={0}>
@@ -68,29 +68,59 @@ const Container = () => {
                              />
                             <TextField
                                 className="sm:w-[48%]"
-                                label="Email address"
-                                placeholder="alexeiward@gmail.com"
-                                type="email"
+                                label="Zip code"
+                                placeholder="10001"
+                                type="number"
                             />
                             <TextField
                                 className="sm:w-[48%]"
-                                label="Phone number"
-                                placeholder="+1 202-555-0136"
-                                type="tel"
+                                label="City"
+                                placeholder="New York"
                             />
                             <TextField
                                 className="sm:mb-0 sm:w-[48%]"
-                                label="Phone number"
-                                placeholder="+1 202-555-0136"
-                                type="tel"
+                                label="Country"
+                                placeholder="United States"
                             />
                         </div>
+                    </fieldset>
+                    <fieldset className="mt-8 sm:mt-12">
+                        <Typography 
+                            className="text-brown-500 uppercase"
+                            component="legend">
+                            Payments details
+                        </Typography>
+                        <FormControl className="mt-6 w-full justify-between sm:flex sm:flex-row">
+                            <FormLabel 
+                                className="capitalize font-semibold font-roboto text-[0.82rem] sm:w-[20%]"
+                                id="payment-method">
+                                Payment method
+                            </FormLabel>
+                            <RadioGroup
+                                aria-labelledby="payment-method"
+                                className="mt-4 w-full sm:mt-0 sm:w-[50%]"
+                                defaultValue="female"
+                                name="radio-buttons-group">
+                                <FormControlLabel 
+                                    className="border border-solid border-gray-300 rounded-md mx-0 mb-3"
+                                    value="female" 
+                                    control={<Radio classes={{ checked: "text-brown-500" }} />} 
+                                    label="e-Money" 
+                                />
+                                <FormControlLabel 
+                                    className="border border-solid border-gray-300 rounded-md mx-0"
+                                    value="male" 
+                                    control={<Radio classes={{ checked: "text-brown-500" }} />} 
+                                    label="Cash on Delivery" 
+                                />
+                            </RadioGroup>
+                        </FormControl>
                     </fieldset>
                 </Paper>
             </Grid>
             <Grid item xs={12} md={5} >
                 <Paper 
-                    className="px-[5%] pb-8 pt-6 rounded-lg mt-16"
+                    className="px-[5%] pb-8 pt-6 rounded-lg mt-16 md:mt-0"
                     elevation={0}>
                     <Typography
                         className="font-bold uppercase text-xl"
