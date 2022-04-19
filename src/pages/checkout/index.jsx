@@ -7,6 +7,7 @@ import classNames from 'classnames'
 import styles from "./css/styles.module.css"
 import TextField from './components/TextField'
 import PaymentMethod from './components/PaymentMehod'
+import CheckoutButton from './components/CheckoutButton'
 
 const Container = () => {
     const cart = useSelector(getAllCartItems);
@@ -116,7 +117,9 @@ const Container = () => {
                         <SubTitle label="Shipping" value={50} />
                         <SubTitle label="Vat (Included)" value={1079} />
                         <SubTitle className="mt-3" label="Grand total" value={totalPrice} valueClassName="text-brown-500" />
-                        <PayLink buttonClassName="w-full" className="mt-4" href="/" label="Continue &amp; Pay" />
+                        <div className="mt-4">
+                            <CheckoutButton />
+                        </div>
                     </div>
                 </Paper>
             </Grid>
@@ -125,3 +128,6 @@ const Container = () => {
 };
 
 export default Container;
+
+//
+//<PayLink buttonClassName="w-full" className="mt-4" href="/" label="Continue &amp; Pay" />

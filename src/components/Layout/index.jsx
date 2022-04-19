@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 
 const Layout = ({ children }) => {
     const { pathname } = useRouter();
-    console.log(pathname)
 
     return (
         <>
