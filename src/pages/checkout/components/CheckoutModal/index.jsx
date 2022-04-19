@@ -3,13 +3,13 @@ import classNames from 'classnames'
 import { useCallback, useMemo } from 'react';
 import Paragraph from 'src/components/Paragraph'
 import Link from 'src/components/Link'
+import styles from "./styles.module.css"
 
 const Container = ({ handleClose, open }) => {
     console.log("dialog");
 
     const title = useMemo(() => (
-        <DialogTitle className={classNames(`p-0 text-2xl uppercase before:bg-brown-500 before:bg-center 
-            before:bg-no-repeat`)}>
+        <DialogTitle className={classNames(`p-0 text-2xl uppercase before:bg-brown-500`, styles.modalTitle)}>
             Thank you<br/>for your order
         </DialogTitle>
     ), []);
@@ -36,7 +36,9 @@ const Container = ({ handleClose, open }) => {
     ), [ clickHandler ]);
 
     return (
-        <Dialog onClose={handleClose} open={open}>
+        <Dialog 
+            classes={{ paper: "px-[5%] py-8 rounded-md"}}
+            onClose={handleClose} open={open}>
             { title }
             { paragraph }
             { link }

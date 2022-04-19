@@ -1,0 +1,10 @@
+.modalTitle::before {
+    border-radius: 50%;
+    color: #FFf;
+    content: "\2713" !important;
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding: 10px 15px;
+    width: fit-content;
+}
