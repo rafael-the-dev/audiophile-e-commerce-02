@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { useCallback, useMemo } from 'react';
 import Paragraph from 'src/components/Paragraph'
 import Link from 'src/components/Link'
+import CheckoutList from "../CheckoutModalList"
 import styles from "./styles.module.css"
 
 const Container = ({ handleClose, open }) => {
@@ -19,6 +20,8 @@ const Container = ({ handleClose, open }) => {
             You will receive an email comfirmation shortly.
         </Paragraph>
     ), []);
+
+    const list = useMemo(() => <CheckoutList />, []);
     
     const clickHandler = useCallback(() => {
         console.log("handler")
@@ -28,7 +31,7 @@ const Container = ({ handleClose, open }) => {
     const link = useMemo(() => (
         <Link 
             buttonClassName="w-full"
-            className="mt-4"
+            className="mt-6"
             clickHandler={clickHandler} 
             href="/" 
             label="Back to home" 
@@ -41,6 +44,7 @@ const Container = ({ handleClose, open }) => {
             onClose={handleClose} open={open}>
             { title }
             { paragraph }
+            { list }
             { link }
         </Dialog>
     );
