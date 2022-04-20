@@ -2,10 +2,16 @@ import { useCallback, useMemo, useState } from 'react'
 import classNames from 'classnames'
 import { Button } from '@mui/material'
 import CheckoutModal from "../CheckoutModal"
+import { useSelector } from 'react-redux';
+
+import { getAllCartItems, getTotalCartAmout } from "src/redux/selectors"
 
 const Container = ({ className }) => {
+    const cart = useSelector(getAllCartItems);
+    const total = useSelector(getTotalCartAmout)
     const [ open, setOpen ] = useState(false);
 
+    const checkout = useMemo(() => ({ cart, total }), [ cart, total ])
     const toggleState = useCallback(prop => () => setOpen(prop), [])
 
     const button = useMemo(() => (
@@ -19,7 +25,7 @@ const Container = ({ className }) => {
     return (
         <>
             { button }
-            <CheckoutModal open={open} handleClose={toggleState(false)} />
+            <CheckoutModal open={open} handleClose={toggleState(false)} { ...checkout } />
         </>
     );
 };

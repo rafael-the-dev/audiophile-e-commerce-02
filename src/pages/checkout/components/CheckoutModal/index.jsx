@@ -6,7 +6,7 @@ import Link from 'src/components/Link'
 import CheckoutList from "../CheckoutModalList"
 import styles from "./styles.module.css"
 
-const Container = ({ handleClose, open }) => {
+const Container = ({ cart, handleClose, open, total }) => {
     console.log("dialog");
 
     const title = useMemo(() => (
@@ -21,7 +21,7 @@ const Container = ({ handleClose, open }) => {
         </Paragraph>
     ), []);
 
-    const list = useMemo(() => <CheckoutList />, []);
+    const list = useMemo(() => <CheckoutList cart={cart} total={total} />, [ cart, total ]);
     
     const clickHandler = useCallback(() => {
         console.log("handler")
