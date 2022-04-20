@@ -7,8 +7,6 @@ import CheckoutList from "../CheckoutModalList"
 import styles from "./styles.module.css"
 
 const Container = ({ cart, handleClose, open, total }) => {
-    console.log("dialog");
-
     const title = useMemo(() => (
         <DialogTitle className={classNames(`p-0 text-2xl uppercase before:bg-brown-500`, styles.modalTitle)}>
             Thank you<br/>for your order
@@ -41,7 +39,7 @@ const Container = ({ cart, handleClose, open, total }) => {
     return (
         <Dialog 
             classes={{ paper: "px-[5%] py-8 rounded-md sm:w-[475px] md:w-[494px] md:px-12"}}
-            onClose={handleClose} open={open}>
+            open={open}>
             { title }
             { paragraph }
             { list }

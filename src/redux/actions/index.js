@@ -17,3 +17,7 @@ export const editCartItem = payload => ({
 export const removeAllCartItems = () => ({
     type: "REMOVE_ALL_CART_ITEMS"
 });
+
+export const finishPayment  = () => ({
+    type: "FINISH_PAYMENT"
+});
