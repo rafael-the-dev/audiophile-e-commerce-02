@@ -5,6 +5,7 @@ import { Typography } from '@mui/material'
 import styles from "./styles.module.css"
 
 import CheckoutListItem from '../CheckoutListItem'
+import Paragraph from 'src/components/Paragraph'
 
 const Container = ({ cart=[], total=0 }) => {
     console.log(total, cart )
@@ -25,6 +26,11 @@ const Container = ({ cart=[], total=0 }) => {
                         <CheckoutListItem key={index} { ...listItem.item } { ...listItem } />
                     ))
                 }
+                { cart.length > 1 && (
+                    <Paragraph className="border-t border-gray-400 border-solid pt-3 text-center">
+                        and { cart.length - 1} other items(s)
+                    </Paragraph>
+                )}
             </div>
             { grandTotal }
         </div>
