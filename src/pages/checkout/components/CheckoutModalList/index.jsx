@@ -2,8 +2,6 @@ import { useMemo } from 'react'
 import classNames from 'classnames'
 import { Typography } from '@mui/material'
 
-import styles from "./styles.module.css"
-
 import CheckoutListItem from '../CheckoutListItem'
 import Paragraph from 'src/components/Paragraph'
 
