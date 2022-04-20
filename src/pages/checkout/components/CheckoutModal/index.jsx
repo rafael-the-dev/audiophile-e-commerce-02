@@ -40,7 +40,7 @@ const Container = ({ cart, handleClose, open, total }) => {
 
     return (
         <Dialog 
-            classes={{ paper: "px-[5%] py-8 rounded-md"}}
+            classes={{ paper: "px-[5%] py-8 rounded-md sm:w-[475px] md:w-[494px] md:px-12"}}
             onClose={handleClose} open={open}>
             { title }
             { paragraph }
