@@ -1,7 +1,8 @@
 import { Typography } from '@mui/material'
-import data from '/public/data.json'
 import ProductCard from 'src/components/ProductCard'
 import CategoriesPreview from 'src/components/CategoriesPreview'
+
+import absoluteUrl from "next-absolute-url";
 
 export const getStaticPaths = async (context) => {
     return {
@@ -16,11 +17,13 @@ export const getStaticPaths = async (context) => {
 
 export const getStaticProps = async (context) => {
     const { category } = context.params;
-    const list = data.filter(item => item.category === category);
+
+    const res = await fetch('http://localhost:3000/api/speakers');
+    const products = (await res.json()).products;
 
     return {
         props: {
-            products: list,
+            products,
             category
         }
     }

@@ -25,13 +25,10 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-    const { id } = context.params;
+    const { category, id } = context.params;
     
-    let product = data.find(item => parseInt(id) === item.id);
-
-    if(!Boolean(product)) {
-        product = data.find(item => id === item.slug);
-    }
+    const res = await fetch(`http://localhost:3000/api/${category}/${id}`);
+    const product = (await res.json()).product;
 
     return {
         props: {
